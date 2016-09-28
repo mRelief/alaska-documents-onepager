@@ -7,6 +7,12 @@
 
   window.shared.Screener = React.createClass({
 
+    getInitialState: function () {
+      return {
+        allQuestionsAnswered: false
+      }
+    },
+
     render: function () {
       return dom.div({},
         this.renderQuestions(),
@@ -19,7 +25,9 @@
     },
 
     renderResults: function () {
-      return createEl(Results, {});
+      return createEl(Results, {
+        allQuestionsAnswered: this.state.allQuestionsAnswered
+      });
     }
 
   });
