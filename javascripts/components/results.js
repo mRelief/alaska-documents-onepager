@@ -18,11 +18,15 @@
 
     renderSectionContent: function () {
       if (this.props.allQuestionsAnswered()) {
-        return 'Here are your results!';
+        return this.resultsMessage();
       } else {
         return 'Please answer all of the questions to get your results.';
-      }
-    }
+      };
+    },
+
+    resultsMessage: function () {
+      return 'Here are your results!';
+    },
 
   });
 })();
