@@ -37,7 +37,11 @@
     },
 
     allQuestionsAnswered: function () {
-
+      return false;
+      // return this.identityQuestionAnswered() &&
+      //        this.residencyQuestionAnswered() &&
+      //        this.incomeQuestionAnswered() &&
+      //        this.citizenshipQuestionAnswered()
     },
 
     onClickStateId: function (event) {
