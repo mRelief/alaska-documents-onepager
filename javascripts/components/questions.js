@@ -4,6 +4,13 @@
 
   window.shared.Questions = React.createClass({
 
+    propTypes: {
+      allQuestionsAnswered: React.PropTypes.bool.isRequired,
+      onClickStateId: React.PropTypes.func.isRequired,
+      onClickBirthCertificate: React.PropTypes.func.isRequired,
+      onClickSocialSecurity: React.PropTypes.func.isRequired,
+    },
+
     render: function () {
       return dom.div({ className: 'column' },
         this.renderIdentitySection(),
@@ -18,14 +25,20 @@
         dom.h3({}, 'Identity'),
         dom.p({}, 'Check the ones you have easy access to:'),
         dom.br({}),
-        dom.input( { type: 'checkbox' }),
-        dom.label({}, 'State I.D.'),
+        dom.input({ type: 'checkbox' }),
+        dom.label({
+          onClick: this.props.onClickStateId
+        }, 'State I.D.'),
         dom.br({}),
-        dom.input( { type: 'checkbox' }),
-        dom.label({}, 'Birth Certificate'),
+        dom.input({ type: 'checkbox' }),
+        dom.label({
+          onClick: this.props.onClickBirthCertificate
+        }, 'Birth Certificate'),
         dom.br({}),
-        dom.input( { type: 'checkbox' }),
-        dom.label({}, 'Social Security Card'),
+        dom.input({ type: 'checkbox' }),
+        dom.label({
+          onClick: this.props.onClickSocialSecurity
+        }, 'Social Security Card'),
         dom.br({})
       );
     },

@@ -9,7 +9,10 @@
 
     getInitialState: function () {
       return {
-        allQuestionsAnswered: false
+        allQuestionsAnswered: false,
+        hasStateId: false,
+        hasBirthCertificate: false,
+        hasSocialSecurity: false,
       }
     },
 
@@ -21,14 +24,30 @@
     },
 
     renderQuestions: function () {
-      return createEl(Questions, {});
+      return createEl(Questions, {
+        onClickStateId: this.onClickStateId,
+        onClickBirthCertificate: this.onClickBirthCertificate,
+        onClickSocialSecurity: this.onClickSocialSecurity,
+      });
     },
 
     renderResults: function () {
       return createEl(Results, {
         allQuestionsAnswered: this.state.allQuestionsAnswered
       });
-    }
+    },
+
+    onClickStateId: function (event) {
+      this.setState({ hasStateId: event.target.checked });
+    },
+
+    onClickBirthCertificate: function (event) {
+      this.setState({ hasBirthCertificate: event.target.checked });
+    },
+
+    onClickSocialSecurity: function (event) {
+      this.setState({ hasSocialSecurity: event.target.checked });
+    },
 
   });
 })();
