@@ -11,7 +11,7 @@
       return {
         hasStateId: false,
         hasBirthCertificate: false,
-        hasSocialSecurity: false,
+        hasSocialSecurityCard: false,
         renting: false,
         ownsHome: false,
         stayingInShelter: false,
@@ -29,6 +29,7 @@
     },
 
     render: function () {
+      console.log(this.state);
       return dom.div({},
         this.renderQuestions(),
         this.renderResults()
@@ -37,9 +38,7 @@
 
     renderQuestions: function () {
       return createEl(Questions, {
-        onClickStateId: this.onClickStateId,
-        onClickBirthCertificate: this.onClickBirthCertificate,
-        onClickSocialSecurity: this.onClickSocialSecurity,
+        onClickCheckbox: this.onClickCheckbox,
       });
     },
 
@@ -57,17 +56,14 @@
       //        this.citizenshipQuestionAnswered()
     },
 
-    onClickStateId: function (event) {
-      this.setState({ hasStateId: event.target.checked });
-    },
+    onClickCheckbox: function (event) {
+      var dataField = event.target.getAttribute('data');
 
-    onClickBirthCertificate: function (event) {
-      this.setState({ hasBirthCertificate: event.target.checked });
-    },
+      var updateObject = {};
+      updateObject[dataField] = event.target.checked;
 
-    onClickSocialSecurity: function (event) {
-      this.setState({ hasSocialSecurity: event.target.checked });
-    },
+      this.setState(updateObject);
+    }
 
   });
 })();

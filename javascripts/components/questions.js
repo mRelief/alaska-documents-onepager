@@ -5,9 +5,7 @@
   window.shared.Questions = React.createClass({
 
     propTypes: {
-      onClickStateId: React.PropTypes.func.isRequired,
-      onClickBirthCertificate: React.PropTypes.func.isRequired,
-      onClickSocialSecurity: React.PropTypes.func.isRequired,
+      onClickCheckbox: React.PropTypes.func.isRequired,
     },
 
     render: function () {
@@ -25,17 +23,26 @@
         dom.p({}, 'Check the ones you have easy access to:'),
         dom.br({}),
         dom.input({
-          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickStateId
+          type: 'checkbox',
+          name: 'identityQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'hasStateId'
         }),
         dom.label({}, 'State I.D.'),
         dom.br({}),
         dom.input({
-          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickBirthCertificate
+          type: 'checkbox',
+          name: 'identityQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'hasBirthCertificate'
         }),
         dom.label({}, 'Birth Certificate'),
         dom.br({}),
         dom.input({
-          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickSocialSecurity
+          type: 'checkbox',
+          name: 'identityQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'hasSocialSecurityCard'
         }),
         dom.label({}, 'Social Security Card'),
         dom.br({})
