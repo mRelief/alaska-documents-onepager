@@ -71,28 +71,63 @@
         dom.h3({}, 'Income'),
         dom.p({}, 'Which of the following sources of income do you receive?'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'employed'
+         }),
         dom.label({}, 'Employment'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'unemploymentBenefits'
+        }),
         dom.label({}, 'Unemployment Benefits'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'retirementBenefits'
+        }),
         dom.label({}, 'Retirement (SSI)'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'selfEmployed'
+        }),
         dom.label({}, 'Self-Employment'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'disabilityBenefits'
+        }),
         dom.label({}, 'Disability Benefits'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'childSupport'
+        }),
         dom.label({}, 'Child Support'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'rentalIncome'
+        }),
         dom.label({}, 'Rental Income'),
         dom.br({}),
-        dom.input( { type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({ type: 'checkbox', name: 'incomeQuestion' }),
         dom.label({}, 'None of the Above'),
         dom.br({})
       );
