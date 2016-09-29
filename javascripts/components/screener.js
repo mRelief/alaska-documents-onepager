@@ -9,21 +9,23 @@
 
     getInitialState: function () {
       return {
-        hasStateId: false,
-        hasBirthCertificate: false,
-        hasSocialSecurityCard: false,
-        renting: false,
-        ownsHome: false,
-        stayingInShelter: false,
-        stayingWithFamilyOrFriends: false,
-        employed: false,
-        unemploymentBenefits: false,
-        retirementBenefits: false,
-        selfEmployed: false,
-        disabilityBenefits: false,
-        childSupport: false,
-        rentalIncome: false,
-        isCitizen: false,
+        userSubmittedData: {
+          hasStateId: false,
+          hasBirthCertificate: false,
+          hasSocialSecurityCard: false,
+          renting: false,
+          ownsHome: false,
+          stayingInShelter: false,
+          stayingWithFamilyOrFriends: false,
+          employed: false,
+          unemploymentBenefits: false,
+          retirementBenefits: false,
+          selfEmployed: false,
+          disabilityBenefits: false,
+          childSupport: false,
+          rentalIncome: false,
+          isCitizen: false,
+        }
       }
     },
 
@@ -83,35 +85,34 @@
 
     onClickCheckbox: function (event) {
       var dataField = event.target.getAttribute('data');
+      var userSubmittedData = this.state.userSubmittedData;
 
-      var updateObject = {};
-      updateObject[dataField] = event.target.checked;
-
-      this.setState(updateObject);
+      userSubmittedData[dataField] = event.target.checked;
+      this.setState({ userSubmittedData: userSubmittedData });
     },
 
     onClickYesCitizen: function () {
-      this.setState({ isCitizen: true });
+      var userSubmittedData = this.state.userSubmittedData;
+      userSubmittedData['isCitizen'] = true;
+      this.setState({ userSubmittedData: userSubmittedData });
     },
 
     onClickNoCitizen: function () {
-      this.setState({ isCitizen: false });
+      var userSubmittedData = this.state.userSubmittedData;
+      userSubmittedData['isCitizen'] = false;
+      this.setState({ userSubmittedData: userSubmittedData });
     },
 
     onClickLivingSituation: function (event) {
       var dataField = event.target.getAttribute('data');
+      var userSubmittedData = this.state.userSubmittedData;
 
-      this.setState({
-        renting: false,
-        ownsHome: false,
-        stayingInShelter: false,
-        stayingWithFamilyOrFriends: false,
-      })
-
-      var updateObject = {};
-      updateObject[dataField] = true;
-
-      this.setState(updateObject);
+      userSubmittedData['renting'] = false;
+      userSubmittedData['ownsHome'] = false;
+      userSubmittedData['stayingInShelter'] = false;
+      userSubmittedData['stayingWithFamilyOrFriends'] = false;
+      userSubmittedData[dataField] = event.target.checked;
+      this.setState({ userSubmittedData: userSubmittedData });
     }
 
   });
