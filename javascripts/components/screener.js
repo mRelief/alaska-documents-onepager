@@ -51,11 +51,34 @@
     },
 
     allQuestionsAnswered: function () {
-      return false;
-      // return this.identityQuestionAnswered() &&
-      //        this.residencyQuestionAnswered() &&
-      //        this.incomeQuestionAnswered() &&
-      //        this.citizenshipQuestionAnswered()
+      return this.identityQuestionAnswered() &&
+             this.residencyQuestionAnswered() &&
+             this.incomeQuestionAnswered() &&
+             this.citizenshipQuestionAnswered()
+    },
+
+    identityQuestionAnswered: function () {
+      return $('input[name="identityQuestion"]').get().map(function(checkbox) {
+        return checkbox.checked;
+      }).reduce(function(a, b) { return (a || b); }, false);
+    },
+
+    residencyQuestionAnswered: function () {
+      return $('input[name="residencyQuestion"]').get().map(function(checkbox) {
+        return checkbox.checked;
+      }).reduce(function(a, b) { return (a || b); }, false);
+    },
+
+    incomeQuestionAnswered: function () {
+      return $('input[name="incomeQuestion"]').get().map(function(checkbox) {
+        return checkbox.checked;
+      }).reduce(function(a, b) { return (a || b); }, false);
+    },
+
+    citizenshipQuestionAnswered: function () {
+      return $('input[name="citizenshipQuestion"]').get().map(function(checkbox) {
+        return checkbox.checked;
+      }).reduce(function(a, b) { return (a || b); }, false);
     },
 
     onClickCheckbox: function (event) {
