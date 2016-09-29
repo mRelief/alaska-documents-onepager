@@ -23,8 +23,7 @@
         disabilityBenefits: false,
         childSupport: false,
         rentalIncome: false,
-        yesCitizen: false,
-        notCitizen: false,
+        isCitizen: false,
       }
     },
 
@@ -39,6 +38,8 @@
     renderQuestions: function () {
       return createEl(Questions, {
         onClickCheckbox: this.onClickCheckbox,
+        onClickYesCitizen: this.onClickYesCitizen,
+        onClickNoCitizen: this.onClickNoCitizen,
       });
     },
 
@@ -63,6 +64,14 @@
       updateObject[dataField] = event.target.checked;
 
       this.setState(updateObject);
+    },
+
+    onClickYesCitizen: function () {
+      this.setState({ isCitizen: true });
+    },
+
+    onClickNoCitizen: function () {
+      this.setState({ isCitizen: false });
     }
 
   });

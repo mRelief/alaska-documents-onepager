@@ -6,6 +6,8 @@
 
     propTypes: {
       onClickCheckbox: React.PropTypes.func.isRequired,
+      onClickYesCitizen: React.PropTypes.func.isRequired,
+      onClickNoCitizen: React.PropTypes.func.isRequired,
     },
 
     render: function () {
@@ -138,10 +140,18 @@
         dom.h3({}, 'Citizenship'),
         dom.p({}, 'Is everyone in your household a U.S. citizen?'),
         dom.br({}),
-        dom.input({ type: 'radio', name: 'citizenshipQuestion' }),
+        dom.input({
+          type: 'radio',
+          name: 'citizenshipQuestion',
+          onClick: this.props.onClickYesCitizen,
+        }),
         dom.label({}, 'Yes'),
         dom.br({}),
-        dom.input({ type: 'radio', name: 'citizenshipQuestion' }),
+        dom.input({
+          type: 'radio',
+          name: 'citizenshipQuestion',
+          onClick: this.props.onClickNoCitizen,
+        }),
         dom.label({}, 'No'),
         dom.br({})
       );
