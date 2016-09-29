@@ -31,3 +31,7 @@ h3 {
   margin-bottom: 4px;
   text-decoration: underline;
 }
+
+input {
+  margin-right: 5px;
+}
