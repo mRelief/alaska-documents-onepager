@@ -9,7 +9,6 @@
 
     getInitialState: function () {
       return {
-        allQuestionsAnswered: false,
         hasStateId: false,
         hasBirthCertificate: false,
         hasSocialSecurity: false,
@@ -33,8 +32,12 @@
 
     renderResults: function () {
       return createEl(Results, {
-        allQuestionsAnswered: this.state.allQuestionsAnswered
+        allQuestionsAnswered: this.allQuestionsAnswered
       });
+    },
+
+    allQuestionsAnswered: function () {
+
     },
 
     onClickStateId: function (event) {
