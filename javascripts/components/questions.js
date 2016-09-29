@@ -24,20 +24,20 @@
         dom.h3({}, 'Identity'),
         dom.p({}, 'Check the ones you have easy access to:'),
         dom.br({}),
-        dom.input({ type: 'checkbox', name: 'identityQuestion' }),
-        dom.label({
-          onClick: this.props.onClickStateId
-        }, 'State I.D.'),
+        dom.input({
+          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickStateId
+        }),
+        dom.label({}, 'State I.D.'),
         dom.br({}),
-        dom.input({ type: 'checkbox', name: 'identityQuestion' }),
-        dom.label({
-          onClick: this.props.onClickBirthCertificate
-        }, 'Birth Certificate'),
+        dom.input({
+          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickBirthCertificate
+        }),
+        dom.label({}, 'Birth Certificate'),
         dom.br({}),
-        dom.input({ type: 'checkbox', name: 'identityQuestion' }),
-        dom.label({
-          onClick: this.props.onClickSocialSecurity
-        }, 'Social Security Card'),
+        dom.input({
+          type: 'checkbox', name: 'identityQuestion', onClick: this.props.onClickSocialSecurity
+        }),
+        dom.label({}, 'Social Security Card'),
         dom.br({})
       );
     },
