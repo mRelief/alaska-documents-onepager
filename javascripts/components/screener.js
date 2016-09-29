@@ -40,6 +40,7 @@
         onClickCheckbox: this.onClickCheckbox,
         onClickYesCitizen: this.onClickYesCitizen,
         onClickNoCitizen: this.onClickNoCitizen,
+        onClickLivingSituation: this.onClickLivingSituation,
       });
     },
 
@@ -72,6 +73,22 @@
 
     onClickNoCitizen: function () {
       this.setState({ isCitizen: false });
+    },
+
+    onClickLivingSituation: function (event) {
+      var dataField = event.target.getAttribute('data');
+
+      this.setState({
+        renting: false,
+        ownsHome: false,
+        stayingInShelter: false,
+        stayingWithFamilyOrFriends: false,
+      })
+
+      var updateObject = {};
+      updateObject[dataField] = true;
+
+      this.setState(updateObject);
     }
 
   });

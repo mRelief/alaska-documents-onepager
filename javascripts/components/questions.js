@@ -8,6 +8,7 @@
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickYesCitizen: React.PropTypes.func.isRequired,
       onClickNoCitizen: React.PropTypes.func.isRequired,
+      onClickLivingSituation: React.PropTypes.func.isRequired,
     },
 
     render: function () {
@@ -54,16 +55,36 @@
     renderResidencySection: function () {
       return dom.section({},
         dom.h3({}, 'Residency'),
-        dom.input({ type: 'radio', name: 'residencyQuestion' }),
-        dom.label({}, 'Rent'),
+        dom.input({
+          type: 'radio',
+          name: 'residencyQuestion',
+          onClick: this.props.onClickLivingSituation,
+          data: 'renting'
+        }),
+        dom.label({}, 'Renting'),
         dom.br({}),
-        dom.input({ type: 'radio', name: 'residencyQuestion' }),
+        dom.input({
+          type: 'radio',
+          name: 'residencyQuestion',
+          onClick: this.props.onClickLivingSituation,
+          data: 'ownsHome'
+        }),
         dom.label({}, 'Own Home'),
         dom.br({}),
-        dom.input({ type: 'radio', name: 'residencyQuestion' }),
-        dom.label({}, 'Shelter'),
+        dom.input({
+          type: 'radio',
+          name: 'residencyQuestion',
+          onClick: this.props.onClickLivingSituation,
+          data: 'stayingInShelter'
+        }),
+        dom.label({}, 'Staying in Shelter'),
         dom.br({}),
-        dom.input({ type: 'radio', name: 'residencyQuestion' }),
+        dom.input({
+          type: 'radio',
+          name: 'residencyQuestion',
+          onClick: this.props.onClickLivingSituation,
+          data: 'stayingWithFamilyOrFriends'
+        }),
         dom.label({}, 'Staying With Family or Friends')
       );
     },
