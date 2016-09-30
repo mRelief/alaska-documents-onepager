@@ -41,3 +41,7 @@ input {
   font-size: 12px;
   cursor: pointer;
 }
+
+li {
+  margin-left: 20px;
+}
