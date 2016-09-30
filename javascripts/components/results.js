@@ -3,6 +3,8 @@
   var dom = React.DOM;
   var createEl = React.createElement.bind(React);
 
+  IdentityAndResidencyResults = window.shared.IdentityAndResidencyResults;
+
   window.shared.Results = React.createClass({
 
     propTypes: {
@@ -27,29 +29,15 @@
     },
 
     resultsMessage: function () {
-      return this.renderIdentityDocuments();
-    },
-
-    renderIdentityDocuments: function () {
-      if (this.props.userSubmittedData.hasStateId) {
-        return dom.div({},
-          dom.span({}, 'You will need to bring your State ID.'),
-          createEl(ReactTooltip, { id: 'state-id-explanation' }),
-          this.renderStateIdTooltip()
-        );
-      };
-    },
-
-    renderStateIdTooltip: function () {
-      return dom.span({
-        'data-for': 'state-id-explanation',
-        'data-tip': 'This verifies your residency and identity.',
-        'style': {
-          color: '#0645AD',
-          fontSize: '12px',
-          cursor: 'pointer'
-        },
-       }, '\u00a0 (?)');
+      return createEl(IdentityAndResidencyResults, {
+        hasStateId: this.props.userSubmittedData.hasStateId,
+        hasBirthCertificate: this.props.userSubmittedData.hasBirthCertificate,
+        hasSocialSecurityCard: this.props.userSubmittedData.hasSocialSecurityCard,
+        renting: this.props.userSubmittedData.renting,
+        ownsHome: this.props.userSubmittedData.ownsHome,
+        stayingInShelter: this.props.userSubmittedData.stayingInShelter,
+        stayingWithFamilyOrFriends: this.props.userSubmittedData.stayingWithFamilyOrFriends,
+      });
     },
 
   });
