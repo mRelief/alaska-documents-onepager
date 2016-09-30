@@ -90,7 +90,10 @@
           onClick: this.props.onClickLivingSituation,
           data: 'stayingWithFamilyOrFriends'
         }),
-        dom.label({}, 'Staying With Family or Friends')
+        dom.label({}, 'Staying With Family or Friends'),
+        dom.br({}),
+        dom.a({ className: 'show-more-options' }, 'Show more options'),
+        dom.br({})
       );
     },
 
