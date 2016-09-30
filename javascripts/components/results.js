@@ -4,6 +4,7 @@
   var createEl = React.createElement.bind(React);
 
   IdentityAndResidencyResults = window.shared.IdentityAndResidencyResults;
+  CitizenshipResults = window.shared.CitizenshipResults;
   IncomeResults = window.shared.IncomeResults;
 
   window.shared.Results = React.createClass({
@@ -48,6 +49,9 @@
           disabilityBenefits: this.props.userSubmittedData.disabilityBenefits,
           childSupport: this.props.userSubmittedData.childSupport,
           rentalIncome: this.props.userSubmittedData.rentalIncome,
+        }),
+        createEl(CitizenshipResults, {
+          isCitizen: this.props.userSubmittedData.isCitizen
         })
       );
     },
