@@ -36,12 +36,21 @@ input {
   margin-right: 5px;
 }
 
-.small-link {
+a {
   color: #0645AD;
-  font-size: 12px;
   cursor: pointer;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+a.show-more-options {
+  margin-left: 10px;
+  margin-top: 5px;
+  display: inline-block;
 }
 
 li {
   margin-left: 20px;
 }
+
+

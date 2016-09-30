@@ -51,6 +51,8 @@
           data: 'hasSocialSecurityCard'
         }),
         dom.label({}, 'Social Security Card'),
+        dom.br({}),
+        dom.a({ className: 'show-more-options' }, 'Show more options'),
         dom.br({})
       );
     },
