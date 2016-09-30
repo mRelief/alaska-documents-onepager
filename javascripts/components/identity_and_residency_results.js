@@ -26,6 +26,7 @@
           hasSocialSecurityCard: this.props.hasSocialSecurityCard,
         }),
         createEl(ResidencyResults, {
+          hasStateId: this.props.hasStateId,
           renting: this.props.renting,
           ownsHome: this.props.ownsHome,
           stayingInShelter: this.props.stayingInShelter,
