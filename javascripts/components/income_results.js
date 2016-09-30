@@ -23,6 +23,8 @@
     },
 
     renderAbsolutelyRequiredDocuments: function () {
+      if (this.hasNoIncomeWithRequiredDocuments()) return null;
+
       var documents = [];
 
       if (this.props.employed) { documents.push(this.incomeTypesToDocuments()['employed']) };
@@ -40,7 +42,36 @@
     },
 
     renderDocumentsThatMayBeEVerified: function () {
-      return null;
+      if (this.hasNoAdditionalIncome()) return null;
+
+      var documents = [];
+
+      if (this.props.unemploymentBenefits) {
+        documents.push(this.incomeTypesToDocuments()['unemploymentBenefits'])
+      };
+
+      if (this.props.retirementBenefits) {
+        documents.push(this.incomeTypesToDocuments()['retirementBenefits'])
+      };
+
+      if (this.props.disabilityBenefits) {
+        documents.push(this.incomeTypesToDocuments()['disabilityBenefits'])
+      };
+
+      if (this.props.childSupport) {
+        documents.push(this.incomeTypesToDocuments()['childSupport'])
+      };
+
+      return dom.div({},
+        dom.br({}),
+        dom.p({},
+          'The state may be able to electronically verify this information, ' +
+          'but you should bring in these documents just in case if you have them:'),
+        dom.br({}),
+        dom.ul({},
+          documents.map(function (doc) { return dom.li({}, doc); })
+        )
+      );
     },
 
     incomeTypesToDocuments: function () {
@@ -48,8 +79,23 @@
         'employed': 'Pay Stubs for the Past 30 Days, *OR* a Statement from Your Employer as to Wages',
         'selfEmployed': 'Self-Employment Bookkeeping Records',
         'rentalIncome': 'Bank Statements',
+        'childSupport': 'Child Support Order',
+        'unemploymentBenefits': 'Unemployment Benefits',
+        'disabilityBenefits': 'Disability Benefits',
+        'retirementBenefits': 'Retirement Benefits',
       };
-    }
+    },
+
+    hasNoIncomeWithRequiredDocuments: function () {
+      return (!this.props.employed && !this.props.selfEmployed && !this.props.rentalIncome);
+    },
+
+    hasNoAdditionalIncome: function () {
+      return (!this.props.childSupport &&
+              !this.props.unemploymentBenefits &&
+              !this.props.disabilityBenefits &&
+              !this.props.retirementBenefits)
+    },
 
   });
 })();
