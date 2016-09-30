@@ -48,7 +48,8 @@
 
     renderResults: function () {
       return createEl(Results, {
-        allQuestionsAnswered: this.allQuestionsAnswered
+        allQuestionsAnswered: this.allQuestionsAnswered,
+        userSubmittedData: this.state.userSubmittedData,
       });
     },
 
