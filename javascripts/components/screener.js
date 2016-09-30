@@ -24,6 +24,7 @@
           disabilityBenefits: false,
           childSupport: false,
           rentalIncome: false,
+          noneOfTheAboveIncome: false,
           isCitizen: false,
         }
       }
@@ -39,9 +40,11 @@
     renderQuestions: function () {
       return createEl(Questions, {
         onClickCheckbox: this.onClickCheckbox,
+        onClickIncomeCheckbox: this.onClickIncomeCheckbox,
         onClickYesCitizen: this.onClickYesCitizen,
         onClickNoCitizen: this.onClickNoCitizen,
         onClickLivingSituation: this.onClickLivingSituation,
+        onClickNoIncome: this.onClickNoIncome,
         userSubmittedData: this.state.userSubmittedData,
       });
     },
@@ -92,6 +95,15 @@
       this.setState({ userSubmittedData: userSubmittedData });
     },
 
+    onClickIncomeCheckbox: function (event) {
+      var dataField = event.target.getAttribute('data');
+      var userSubmittedData = this.state.userSubmittedData;
+
+      userSubmittedData[dataField] = event.target.checked;
+      userSubmittedData['noneOfTheAboveIncome'] = false;
+      this.setState({ userSubmittedData: userSubmittedData });
+    },
+
     onClickYesCitizen: function () {
       var userSubmittedData = this.state.userSubmittedData;
       userSubmittedData['isCitizen'] = true;
@@ -113,6 +125,21 @@
       userSubmittedData['stayingInShelter'] = false;
       userSubmittedData['stayingWithFamilyOrFriends'] = false;
       userSubmittedData[dataField] = event.target.checked;
+      this.setState({ userSubmittedData: userSubmittedData });
+    },
+
+    onClickNoIncome: function () {
+      var userSubmittedData = this.state.userSubmittedData;
+
+      userSubmittedData['employed'] = false;
+      userSubmittedData['unemploymentBenefits'] = false;
+      userSubmittedData['retirementBenefits'] = false;
+      userSubmittedData['selfEmployed'] = false;
+      userSubmittedData['disabilityBenefits'] = false;
+      userSubmittedData['childSupport'] = false;
+      userSubmittedData['rentalIncome'] = false;
+      userSubmittedData['noneOfTheAboveIncome'] = true;
+
       this.setState({ userSubmittedData: userSubmittedData });
     },
 

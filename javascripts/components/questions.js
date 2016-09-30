@@ -6,9 +6,11 @@
 
     propTypes: {
       onClickCheckbox: React.PropTypes.func.isRequired,
+      onClickIncomeCheckbox: React.PropTypes.func.isRequired,
       onClickYesCitizen: React.PropTypes.func.isRequired,
       onClickNoCitizen: React.PropTypes.func.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
+      onClickNoIncome: React.PropTypes.func.isRequired,
       userSubmittedData: React.PropTypes.object.isRequired,
     },
 
@@ -98,7 +100,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'employed',
           checked: this.props.userSubmittedData.employed
          }),
@@ -107,7 +109,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'unemploymentBenefits',
           checked: this.props.userSubmittedData.unemploymentBenefits
         }),
@@ -116,7 +118,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'retirementBenefits',
           checked: this.props.userSubmittedData.retirementBenefits
         }),
@@ -125,7 +127,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'selfEmployed',
           checked: this.props.userSubmittedData.selfEmployed
         }),
@@ -134,7 +136,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'disabilityBenefits',
           checked: this.props.userSubmittedData.disabilityBenefits
         }),
@@ -143,7 +145,7 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'childSupport',
           checked: this.props.userSubmittedData.childSupport
         }),
@@ -152,13 +154,18 @@
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickIncomeCheckbox,
           data: 'rentalIncome',
           checked: this.props.userSubmittedData.rentalIncome
         }),
         dom.label({}, 'Rental Income'),
         dom.br({}),
-        dom.input({ type: 'checkbox', name: 'incomeQuestion' }),
+        dom.input({
+          type: 'checkbox',
+          name: 'incomeQuestion',
+          onClick: this.props.onClickNoIncome,
+          checked: this.props.userSubmittedData.noneOfTheAboveIncome,
+        }),
         dom.label({}, 'None of the Above'),
         dom.br({})
       );
@@ -184,6 +191,16 @@
         dom.label({}, 'No'),
         dom.br({})
       );
+    },
+
+    noneOfTheAboveChecked: function () {
+      return (!this.props.userSubmittedData.employed &&
+              !this.props.userSubmittedData.unemploymentBenefits &&
+              !this.props.userSubmittedData.retirementBenefits &&
+              !this.props.userSubmittedData.selfEmployed &&
+              !this.props.userSubmittedData.disabilityBenefits &&
+              !this.props.userSubmittedData.childSupport &&
+              !this.props.userSubmittedData.rentalIncome)
     },
 
   });
