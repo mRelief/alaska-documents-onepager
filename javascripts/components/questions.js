@@ -9,6 +9,7 @@
       onClickYesCitizen: React.PropTypes.func.isRequired,
       onClickNoCitizen: React.PropTypes.func.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
+      userSubmittedData: React.PropTypes.object.isRequired,
     },
 
     render: function () {
@@ -98,7 +99,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'employed'
+          data: 'employed',
+          checked: this.props.userSubmittedData.employed
          }),
         dom.label({}, 'Employment'),
         dom.br({}),
@@ -106,7 +108,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'unemploymentBenefits'
+          data: 'unemploymentBenefits',
+          checked: this.props.userSubmittedData.unemploymentBenefits
         }),
         dom.label({}, 'Unemployment Benefits'),
         dom.br({}),
@@ -114,7 +117,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'retirementBenefits'
+          data: 'retirementBenefits',
+          checked: this.props.userSubmittedData.retirementBenefits
         }),
         dom.label({}, 'Retirement (SSI)'),
         dom.br({}),
@@ -122,7 +126,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'selfEmployed'
+          data: 'selfEmployed',
+          checked: this.props.userSubmittedData.selfEmployed
         }),
         dom.label({}, 'Self-Employment'),
         dom.br({}),
@@ -130,7 +135,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'disabilityBenefits'
+          data: 'disabilityBenefits',
+          checked: this.props.userSubmittedData.disabilityBenefits
         }),
         dom.label({}, 'Disability Benefits'),
         dom.br({}),
@@ -138,7 +144,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'childSupport'
+          data: 'childSupport',
+          checked: this.props.userSubmittedData.childSupport
         }),
         dom.label({}, 'Child Support'),
         dom.br({}),
@@ -146,7 +153,8 @@
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'rentalIncome'
+          data: 'rentalIncome',
+          checked: this.props.userSubmittedData.rentalIncome
         }),
         dom.label({}, 'Rental Income'),
         dom.br({}),

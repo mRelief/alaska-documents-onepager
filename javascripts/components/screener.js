@@ -42,6 +42,7 @@
         onClickYesCitizen: this.onClickYesCitizen,
         onClickNoCitizen: this.onClickNoCitizen,
         onClickLivingSituation: this.onClickLivingSituation,
+        userSubmittedData: this.state.userSubmittedData,
       });
     },
 
