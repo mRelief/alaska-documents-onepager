@@ -14,8 +14,7 @@
       return dom.div({ className: 'column' },
         dom.h2({}, 'Results'),
         dom.br({}),
-        this.renderSectionContent(),
-        this.renderReactTooltips()
+        this.renderSectionContent()
       );
     },
 
@@ -35,6 +34,7 @@
       if (this.props.userSubmittedData.hasStateId) {
         return dom.div({},
           dom.span({}, 'You will need to bring your State ID.'),
+          createEl(ReactTooltip, { id: 'state-id-explanation' }),
           this.renderStateIdTooltip()
         );
       };
@@ -44,28 +44,12 @@
       return dom.span({
         'data-for': 'state-id-explanation',
         'data-tip': 'This verifies your residency and identity.',
-        'className': 'small-link',
+        'style': {
+          color: '#0645AD',
+          fontSize: '12px',
+          cursor: 'pointer'
+        },
        }, '\u00a0 (?)');
-    },
-
-    renderIncomeTooltip: function () {
-      return dom.span({
-        className: 'small-link',
-        'data-for': 'income-explanation',
-        'data-tip': 'This verifies your income.'
-       }, '\u00a0 (?)');
-    },
-
-    renderIdentityTooltip: function () {
-      return dom.span({
-        className: 'small-link',
-        'data-for': 'income-explanation',
-        'data-tip': 'This verifies your identity.'
-       }, '\u00a0 (?)');
-    },
-
-    renderReactTooltips: function () {
-      return createEl(ReactTooltip, { id: 'state-id-explanation' });
     },
 
   });

@@ -30,7 +30,6 @@
     },
 
     render: function () {
-      console.log(this.state);
       return dom.div({},
         this.renderQuestions(),
         this.renderResults()
@@ -114,7 +113,7 @@
       userSubmittedData['stayingWithFamilyOrFriends'] = false;
       userSubmittedData[dataField] = event.target.checked;
       this.setState({ userSubmittedData: userSubmittedData });
-    }
+    },
 
   });
 })();
