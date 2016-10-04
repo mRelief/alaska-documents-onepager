@@ -32,7 +32,7 @@
       if (this.props.allQuestionsAnswered()) {
         return this.renderResults();
       } else {
-        return 'Please answer all of the questions to get your results.';
+        return 'Please answer all questions to get your results.';
       };
     },
 
