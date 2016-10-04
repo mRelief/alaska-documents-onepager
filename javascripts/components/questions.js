@@ -7,12 +7,14 @@
     propTypes: {
       allQuestionsAnswered: React.PropTypes.func.isRequired,
       renderResidencySection: React.PropTypes.func.isRequired,
+      onClickIdentityCheckbox: React.PropTypes.func.isRequired,
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
       onClickYesCitizen: React.PropTypes.func.isRequired,
       onClickNoCitizen: React.PropTypes.func.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
       onClickNoIncome: React.PropTypes.func.isRequired,
+      onClickNoneOfTheAboveIdentityDocs: React.PropTypes.func.isRequired,
       userSubmittedData: React.PropTypes.object.isRequired,
     },
 
@@ -45,33 +47,37 @@
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
-          onClick: this.props.onClickCheckbox,
-          data: 'hasStateId'
+          onClick: this.props.onClickIdentityCheckbox,
+          data: 'hasStateId',
+          checked: this.props.userSubmittedData.hasStateId
         }),
         dom.label({}, 'State I.D.'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
-          onClick: this.props.onClickCheckbox,
-          data: 'hasBirthCertificate'
+          onClick: this.props.onClickIdentityCheckbox,
+          data: 'hasBirthCertificate',
+          checked: this.props.userSubmittedData.hasBirthCertificate
         }),
         dom.label({}, 'Birth Certificate'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
-          onClick: this.props.onClickCheckbox,
-          data: 'hasSocialSecurityCard'
+          onClick: this.props.onClickIdentityCheckbox,
+          data: 'hasSocialSecurityCard',
+          checked: this.props.userSubmittedData.hasSocialSecurityCard
         }),
         dom.label({}, 'Social Security Card'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
-          onClick: this.props.onClickCheckbox,
+          onClick: this.props.onClickNoneOfTheAboveIdentityDocs,
+          checked: this.props.userSubmittedData.noneOfTheAboveIdentity
         }),
-        dom.label({}, 'None of The Above'),
+        dom.label({}, 'None of the Above'),
         dom.br({})
       );
     },

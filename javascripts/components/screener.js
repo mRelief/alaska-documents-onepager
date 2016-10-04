@@ -13,6 +13,7 @@
           hasStateId: false,
           hasBirthCertificate: false,
           hasSocialSecurityCard: false,
+          noneOfTheAboveIdentity: false,
           renting: false,
           ownsHome: false,
           stayingInShelter: false,
@@ -42,11 +43,13 @@
         allQuestionsAnswered: this.allQuestionsAnswered,
         renderResidencySection: this.renderResidencySection,
         onClickCheckbox: this.onClickCheckbox,
+        onClickIdentityCheckbox: this.onClickIdentityCheckbox,
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
         onClickYesCitizen: this.onClickYesCitizen,
         onClickNoCitizen: this.onClickNoCitizen,
         onClickLivingSituation: this.onClickLivingSituation,
         onClickNoIncome: this.onClickNoIncome,
+        onClickNoneOfTheAboveIdentityDocs: this.onClickNoneOfTheAboveIdentityDocs,
         userSubmittedData: this.state.userSubmittedData,
       });
     },
@@ -100,6 +103,15 @@
       this.setState({ userSubmittedData: userSubmittedData });
     },
 
+    onClickIdentityCheckbox: function (event) {
+      var dataField = event.target.getAttribute('data');
+      var userSubmittedData = this.state.userSubmittedData;
+
+      userSubmittedData[dataField] = event.target.checked;
+      userSubmittedData['noneOfTheAboveIdentity'] = false;
+      this.setState({ userSubmittedData: userSubmittedData });
+    },
+
     onClickIncomeCheckbox: function (event) {
       var dataField = event.target.getAttribute('data');
       var userSubmittedData = this.state.userSubmittedData;
@@ -144,6 +156,17 @@
       userSubmittedData['childSupport'] = false;
       userSubmittedData['rentalIncome'] = false;
       userSubmittedData['noneOfTheAboveIncome'] = true;
+
+      this.setState({ userSubmittedData: userSubmittedData });
+    },
+
+    onClickNoneOfTheAboveIdentityDocs: function () {
+      var userSubmittedData = this.state.userSubmittedData;
+
+      userSubmittedData['hasStateId'] = false;
+      userSubmittedData['hasBirthCertificate'] = false;
+      userSubmittedData['hasSocialSecurityCard'] = false;
+      userSubmittedData['noneOfTheAboveIdentity'] = true;
 
       this.setState({ userSubmittedData: userSubmittedData });
     },
