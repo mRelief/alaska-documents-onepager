@@ -15,6 +15,12 @@
       userSubmittedData: React.PropTypes.object.isRequired,
     },
 
+    getInitialState: function () {
+      return {
+        showMoreIdentityOptions: false
+      };
+    },
+
     render: function () {
       return dom.div({ className: this.divClassName(), id: 'questions-column' },
         this.renderIdentitySection(),
@@ -59,9 +65,55 @@
         }),
         dom.label({}, 'Social Security Card'),
         dom.br({}),
-        dom.a({ className: 'show-more-options' }, 'Show more options'),
+        this.renderMoreIdentityOptions(),
         dom.br({})
       );
+    },
+
+    renderMoreIdentityOptions: function () {
+      if (this.state.showMoreIdentityOptions) {
+        return dom.div({},
+          dom.input({
+            type: 'checkbox',
+            name: 'identityQuestion',
+          }),
+          dom.label({}, 'Health Benefits Identification Card'),
+          dom.br({}),
+          dom.input({
+            type: 'checkbox',
+            name: 'identityQuestion',
+          }),
+          dom.label({}, 'School Photo I.D.'),
+          dom.br({}),
+          dom.input({
+            type: 'checkbox',
+            name: 'identityQuestion',
+          }),
+          dom.label({}, 'Voter Registration Card'),
+          dom.br({}),
+          dom.input({
+            type: 'checkbox',
+            name: 'identityQuestion',
+          }),
+          dom.label({}, 'U.S. Military Card'),
+          dom.br({}),
+          dom.input({
+            type: 'checkbox',
+            name: 'identityQuestion',
+          }),
+          dom.label({}, 'None of The Above'),
+          dom.br({}),
+          dom.a({
+            className: 'show-more-options',
+            onClick: this.showMoreIdentityOptions
+          }, 'Show fewer options')
+        );
+      } else {
+        return dom.a({
+          className: 'show-more-options',
+          onClick: this.showMoreIdentityOptions
+        }, 'Show more options');
+      };
     },
 
     renderResidencySection: function () {
@@ -211,6 +263,10 @@
               !this.props.userSubmittedData.disabilityBenefits &&
               !this.props.userSubmittedData.childSupport &&
               !this.props.userSubmittedData.rentalIncome)
+    },
+
+    showMoreIdentityOptions: function () {
+      this.setState({ showMoreIdentityOptions: !this.state.showMoreIdentityOptions });
     },
 
   });
