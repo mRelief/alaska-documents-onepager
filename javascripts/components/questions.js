@@ -166,18 +166,21 @@
           dom.input({
             type: 'radio',
             name: 'residencyQuestion',
+            onClick: this.props.onClickLivingSituation,
           }),
           dom.label({}, 'Staying in Car'),
           dom.br({}),
           dom.input({
             type: 'radio',
             name: 'residencyQuestion',
+            onClick: this.props.onClickLivingSituation,
           }),
           dom.label({}, 'Staying in Motel'),
           dom.br({}),
           dom.input({
             type: 'radio',
             name: 'residencyQuestion',
+            onClick: this.props.onClickLivingSituation,
           }),
           dom.label({}, 'Paying Rent In-Kind (work in exchange for rent)'),
           dom.br({}),
