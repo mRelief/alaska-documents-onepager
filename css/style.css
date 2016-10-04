@@ -31,12 +31,12 @@ h1 {
 
 .column#questions-column {
   background-color: #D4C1EC;
-  width: 60%;
+  width: 50%;
 }
 
 .column#results-column {
   background-color: white;
-  width: 20%;
+  width: 30%;
 }
 
 .column#results-column.answered {
@@ -80,4 +80,6 @@ li {
   margin-left: 20px;
 }
 
-
+p.question {
+  font-weight: bold;
+}

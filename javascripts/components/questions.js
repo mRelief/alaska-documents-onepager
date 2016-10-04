@@ -25,7 +25,7 @@
 
     renderIdentitySection: function () {
       return dom.section({},
-        dom.p({}, 'Which identity documents do you have easy access to?'),
+        dom.p({ className: 'question' }, 'Which identity documents do you have easy access to?'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
@@ -58,7 +58,7 @@
 
     renderResidencySection: function () {
       return dom.section({},
-        dom.p({}, 'Which best describes your living situation?'),
+        dom.p({ className: 'question' }, 'Which best describes your living situation?'),
         dom.br({}),
         dom.input({
           type: 'radio',
@@ -99,7 +99,7 @@
 
     renderIncomeSection: function () {
       return dom.section({},
-        dom.p({}, 'Which of the following sources of income do you receive?'),
+        dom.p({ className: 'question' }, 'Which of the following sources of income do you receive?'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
@@ -177,7 +177,7 @@
 
     renderCitizenshipSection: function () {
       return dom.section({},
-        dom.p({}, 'Is everyone in your household a U.S. citizen?'),
+        dom.p({ className: 'question' }, 'Is everyone in your household a U.S. citizen?'),
         dom.br({}),
         dom.input({
           type: 'radio',
