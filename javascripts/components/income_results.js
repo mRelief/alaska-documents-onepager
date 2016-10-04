@@ -33,7 +33,7 @@
 
       return dom.div({},
         dom.br({}),
-        dom.p({}, 'You will need these documents to verify your income:'),
+        dom.p({ className: 'result' }, 'You will need these documents to verify your income:'),
         dom.br({}),
         dom.ul({},
           documents.map(function (doc) { return dom.li({}, doc); })
@@ -64,7 +64,7 @@
 
       return dom.div({},
         dom.br({}),
-        dom.p({},
+        dom.p({ className: 'result' },
           'The state may be able to electronically verify this information, ' +
           'but you should bring in these documents just in case if you have them:'),
         dom.br({}),
@@ -76,7 +76,7 @@
 
     incomeTypesToDocuments: function () {
       return {
-        'employed': 'Pay Stubs for the Past 30 Days, *OR* a Statement from Your Employer as to Wages',
+        'employed': 'Pay Stubs for the Past 30 Days, or a Statement from Your Employer as to Wages',
         'selfEmployed': 'Self-Employment Bookkeeping Records',
         'rentalIncome': 'Bank Statements',
         'childSupport': 'Child Support Order',

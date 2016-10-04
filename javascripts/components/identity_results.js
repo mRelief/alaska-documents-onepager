@@ -21,7 +21,7 @@
 
     renderWithStateId: function () {
       return dom.div({},
-        dom.span({}, 'You will need to bring your State ID.'),
+        dom.span({ className: 'result' }, 'You will need to bring your State ID.'),
         createEl(ReactTooltip, { id: 'state-id-explanation' }),
         this.renderStateIdTooltip()
       );
@@ -29,14 +29,14 @@
 
     renderWithNoStateId: function () {
       if (this.props.hasBirthCertificate && this.props.hasSocialSecurityCard) {
-        return dom.p({}, 'You will need to bring your Birth Certificate and/or Social Security Card.');
+        return dom.p({ className: 'result' }, 'You will need to bring your Birth Certificate and/or Social Security Card.');
       } else if (this.props.hasBirthCertificate) {
-        return dom.p({}, 'You will need to bring your Birth Certificate.');
+        return dom.p({ className: 'result' }, 'You will need to bring your Birth Certificate.');
       } else if (this.props.hasSocialSecurityCard) {
-        return dom.p({}, 'You will need to bring your Social Security Card');
+        return dom.p({ className: 'result' }, 'You will need to bring your Social Security Card');
       } else {
         return dom.div({},
-          dom.p({}, 'You will need to bring one of the documents from this list:'),
+          dom.p({ className: 'result' }, 'You will need to bring ONE of the documents from this list:'),
           dom.ul({},
             dom.li({}, 'State ID'),
             dom.li({}, 'Health Benefits Identification Card'),

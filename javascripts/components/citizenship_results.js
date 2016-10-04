@@ -14,7 +14,7 @@
 
       return dom.div({},
         dom.br({}),
-        dom.p({}, 'You will need *ONE* of the following documents to verify your citizenship status:'),
+        dom.p({ className: 'result' }, 'You will need ONE of the following documents to verify your citizenship status:'),
         dom.br({}),
         dom.ul({},
           dom.li({}, 'Permanent Resident Card'),

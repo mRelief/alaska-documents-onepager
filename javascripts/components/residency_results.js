@@ -18,7 +18,7 @@
 
       return dom.div({},
         dom.br({}),
-        dom.p({}, 'You will need *ONE* of these documents to prove residency:'),
+        dom.p({ className: 'result' }, 'You will need ONE of these documents to prove residency:'),
         dom.br({}),
         dom.ul({}, this.suggestedResidencyDocumentsList())
       );
