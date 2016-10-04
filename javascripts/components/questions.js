@@ -6,6 +6,7 @@
 
     propTypes: {
       allQuestionsAnswered: React.PropTypes.func.isRequired,
+      renderResidencySection: React.PropTypes.func.isRequired,
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
       onClickYesCitizen: React.PropTypes.func.isRequired,
@@ -18,7 +19,7 @@
     getInitialState: function () {
       return {
         showMoreIdentityOptions: false,
-        showMoreResidencyOptions: false
+        showMoreResidencyOptions: false,
       };
     },
 
@@ -118,7 +119,7 @@
     },
 
     renderResidencySection: function () {
-      if (this.props.userSubmittedData.hasStateId === true) return null;
+      if (this.props.renderResidencySection() === false) return null;
 
       return dom.section({},
         dom.p({ className: 'question' }, 'Which best describes your living situation?'),

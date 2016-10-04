@@ -40,6 +40,7 @@
     renderQuestions: function () {
       return createEl(Questions, {
         allQuestionsAnswered: this.allQuestionsAnswered,
+        renderResidencySection: this.renderResidencySection,
         onClickCheckbox: this.onClickCheckbox,
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
         onClickYesCitizen: this.onClickYesCitizen,
@@ -71,7 +72,9 @@
     },
 
     residencyQuestionAnswered: function () {
-      if (this.state.userSubmittedData.hasStateId === true) return true;
+      if (this.renderResidencySection() === false) return true;   // Skip validation if we don't
+                                                                  // render this section.
+
       return $('input[name="residencyQuestion"]').get().map(function(checkbox) {
         return checkbox.checked;
       }).reduce(function(a, b) { return (a || b); }, false);
@@ -143,6 +146,13 @@
       userSubmittedData['noneOfTheAboveIncome'] = true;
 
       this.setState({ userSubmittedData: userSubmittedData });
+    },
+
+    renderResidencySection: function () {
+      var userSubmittedData = this.state.userSubmittedData;
+      var identityQuestionAnswered = this.identityQuestionAnswered();
+
+      return (identityQuestionAnswered && !userSubmittedData.hasStateId);
     },
 
   });
