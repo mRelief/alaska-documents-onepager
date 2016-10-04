@@ -65,6 +65,8 @@
     },
 
     renderResidencySection: function () {
+      if (this.props.userSubmittedData.hasStateId === true) return null;
+
       return dom.section({},
         dom.p({ className: 'question' }, 'Which best describes your living situation?'),
         dom.input({

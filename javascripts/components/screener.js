@@ -71,6 +71,7 @@
     },
 
     residencyQuestionAnswered: function () {
+      if (this.state.userSubmittedData.hasStateId === true) return true;
       return $('input[name="residencyQuestion"]').get().map(function(checkbox) {
         return checkbox.checked;
       }).reduce(function(a, b) { return (a || b); }, false);
