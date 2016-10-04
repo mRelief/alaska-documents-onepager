@@ -18,8 +18,7 @@
 
     getInitialState: function () {
       return {
-        showMoreIdentityOptions: false,
-        showMoreResidencyOptions: false,
+        showMoreResidencyOptions: false
       };
     },
 
@@ -67,55 +66,14 @@
         }),
         dom.label({}, 'Social Security Card'),
         dom.br({}),
-        this.renderMoreIdentityOptions(),
+        dom.input({
+          type: 'checkbox',
+          name: 'identityQuestion',
+          onClick: this.props.onClickCheckbox,
+        }),
+        dom.label({}, 'None of The Above'),
         dom.br({})
       );
-    },
-
-    renderMoreIdentityOptions: function () {
-      if (this.state.showMoreIdentityOptions) {
-        return dom.div({},
-          dom.input({
-            type: 'checkbox',
-            name: 'identityQuestion',
-          }),
-          dom.label({}, 'Health Benefits Identification Card'),
-          dom.br({}),
-          dom.input({
-            type: 'checkbox',
-            name: 'identityQuestion',
-          }),
-          dom.label({}, 'School Photo I.D.'),
-          dom.br({}),
-          dom.input({
-            type: 'checkbox',
-            name: 'identityQuestion',
-          }),
-          dom.label({}, 'Voter Registration Card'),
-          dom.br({}),
-          dom.input({
-            type: 'checkbox',
-            name: 'identityQuestion',
-          }),
-          dom.label({}, 'U.S. Military Card'),
-          dom.br({}),
-          dom.input({
-            type: 'checkbox',
-            name: 'identityQuestion',
-          }),
-          dom.label({}, 'None of The Above'),
-          dom.br({}),
-          dom.a({
-            className: 'show-more-options',
-            onClick: this.showMoreIdentityOptions
-          }, 'Show fewer options')
-        );
-      } else {
-        return dom.a({
-          className: 'show-more-options',
-          onClick: this.showMoreIdentityOptions
-        }, 'Show more options');
-      };
     },
 
     renderResidencySection: function () {

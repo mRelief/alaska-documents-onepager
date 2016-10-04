@@ -29,22 +29,20 @@
 
     renderWithNoStateId: function () {
       if (this.props.hasBirthCertificate && this.props.hasSocialSecurityCard) {
-        return dom.p({ className: 'result' }, 'You will need to bring your Birth Certificate and/or Social Security Card.');
+        return dom.p({ className: 'result' }, 'You will need to bring your Birth Certificate or Social Security Card.');
       } else if (this.props.hasBirthCertificate) {
         return dom.p({ className: 'result' }, 'You will need to bring your Birth Certificate.');
       } else if (this.props.hasSocialSecurityCard) {
-        return dom.p({ className: 'result' }, 'You will need to bring your Social Security Card');
+        return dom.p({ className: 'result' }, 'You will need to bring your Social Security Card.');
       } else {
         return dom.div({},
           dom.p({ className: 'result' }, 'You will need to bring ONE of the documents from this list:'),
+          dom.br({}),
           dom.ul({},
-            dom.li({}, 'State ID'),
             dom.li({}, 'Health Benefits Identification Card'),
             dom.li({}, 'School Photo ID'),
             dom.li({}, 'U.S. Military Card'),
-            dom.li({}, 'Voter Registration Card'),
-            dom.li({}, 'Birth Certificate'),
-            dom.li({}, 'Social Security Card ')
+            dom.li({}, 'Voter Registration Card')
           )
         );
       };
