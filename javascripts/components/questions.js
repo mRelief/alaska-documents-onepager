@@ -17,7 +17,8 @@
 
     getInitialState: function () {
       return {
-        showMoreIdentityOptions: false
+        showMoreIdentityOptions: false,
+        showMoreResidencyOptions: false
       };
     },
 
@@ -153,11 +154,44 @@
         }),
         dom.label({}, 'Staying With Family or Friends'),
         dom.br({}),
-        dom.a({ className: 'show-more-options' }, 'Show more options'),
+        this.renderMoreResidencyOptions(),
         dom.br({})
       );
     },
 
+    renderMoreResidencyOptions: function () {
+      if (this.state.showMoreResidencyOptions) {
+        return dom.div({},
+          dom.input({
+            type: 'radio',
+            name: 'residencyQuestion',
+          }),
+          dom.label({}, 'Staying in Car'),
+          dom.br({}),
+          dom.input({
+            type: 'radio',
+            name: 'residencyQuestion',
+          }),
+          dom.label({}, 'Staying in Motel'),
+          dom.br({}),
+          dom.input({
+            type: 'radio',
+            name: 'residencyQuestion',
+          }),
+          dom.label({}, 'Paying Rent In-Kind (work in exchange for rent)'),
+          dom.br({}),
+          dom.a({
+            className: 'show-more-options',
+            onClick: this.showMoreResidencyOptions
+          }, 'Show fewer options')
+        );
+      } else {
+        return dom.a({
+          className: 'show-more-options',
+          onClick: this.showMoreResidencyOptions
+        }, 'Show more options');
+      }
+    },
     renderIncomeSection: function () {
       return dom.section({},
         dom.p({ className: 'question' }, 'Which of the following sources of income do you receive?'),
@@ -268,6 +302,10 @@
     showMoreIdentityOptions: function () {
       this.setState({ showMoreIdentityOptions: !this.state.showMoreIdentityOptions });
     },
+
+    showMoreResidencyOptions: function () {
+      this.setState({ showMoreResidencyOptions: !this.state.showMoreResidencyOptions });
+    }
 
   });
 })();
