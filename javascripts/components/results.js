@@ -60,7 +60,18 @@
         }),
         createEl(CitizenshipResults, {
           isCitizen: this.props.userSubmittedData.isCitizen
-        })
+        }),
+        dom.br({}),
+        dom.div({},
+          dom.span({
+            style: {
+              fontStyle: 'italic',
+              fontWeight: 'bold'
+            }
+          }, 'A Reminder: '),
+          'Documents must be submitted within 10 days of application submission, ' +
+          'otherwise they are automatically denied.'
+        )
       );
     },
 
