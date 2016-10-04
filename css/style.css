@@ -32,7 +32,7 @@ h1 {
 }
 
 .column#questions-column {
-  background-color: #D4C1EC;
+  background-color: #6EC4DF;
   width: 50%;
   margin-left: 20px;
 }
@@ -43,7 +43,13 @@ h1 {
 }
 
 .column#results-column.answered {
+  width: 50%;
   background-color: yellow;
+}
+
+.column#questions-column.answered {
+  width: 30%;
+  background-color: white;
 }
 
 #title {

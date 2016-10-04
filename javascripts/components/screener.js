@@ -39,6 +39,7 @@
 
     renderQuestions: function () {
       return createEl(Questions, {
+        allQuestionsAnswered: this.allQuestionsAnswered,
         onClickCheckbox: this.onClickCheckbox,
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
         onClickYesCitizen: this.onClickYesCitizen,

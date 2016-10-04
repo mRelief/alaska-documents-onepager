@@ -5,6 +5,7 @@
   window.shared.Questions = React.createClass({
 
     propTypes: {
+      allQuestionsAnswered: React.PropTypes.func.isRequired,
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
       onClickYesCitizen: React.PropTypes.func.isRequired,
@@ -15,12 +16,20 @@
     },
 
     render: function () {
-      return dom.div({ className: 'column', id: 'questions-column' },
+      return dom.div({ className: this.divClassName(), id: 'questions-column' },
         this.renderIdentitySection(),
         this.renderResidencySection(),
         this.renderIncomeSection(),
         this.renderCitizenshipSection()
       );
+    },
+
+    divClassName: function () {
+      if (this.props.allQuestionsAnswered()) {
+        return 'column answered';
+      } else {
+        return 'column';
+      };
     },
 
     renderIdentitySection: function () {
