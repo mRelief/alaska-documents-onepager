@@ -31,7 +31,7 @@
     },
 
     render: function () {
-      return dom.div({},
+      return dom.div({ id: 'parent-container' },
         this.renderQuestions(),
         this.renderResults()
       );

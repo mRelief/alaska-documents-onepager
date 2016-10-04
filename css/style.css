@@ -25,13 +25,16 @@ h1 {
 .column {
   float: left;
   padding: 20px;
-  margin: 20px;
+  margin-top: 20px;
   height: 700px;
+  flex-grow: 1;
+  margin-right: 20px;
 }
 
 .column#questions-column {
   background-color: #D4C1EC;
   width: 50%;
+  margin-left: 20px;
 }
 
 .column#results-column {
@@ -83,3 +86,8 @@ li {
 p.question {
   font-weight: bold;
 }
+
+#parent-container {
+  display: flex;
+}
+
