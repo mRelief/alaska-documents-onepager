@@ -38,6 +38,8 @@
 
     renderResults: function () {
       return dom.div({},
+        dom.h1({}, 'Results'),
+        dom.br({}),
         createEl(IdentityAndResidencyResults, {
           hasStateId: this.props.userSubmittedData.hasStateId,
           hasBirthCertificate: this.props.userSubmittedData.hasBirthCertificate,
