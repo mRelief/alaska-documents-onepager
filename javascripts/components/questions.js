@@ -15,7 +15,7 @@
     },
 
     render: function () {
-      return dom.div({ className: 'column' },
+      return dom.div({ className: 'column', id: 'questions-column' },
         this.renderIdentitySection(),
         this.renderResidencySection(),
         this.renderIncomeSection(),

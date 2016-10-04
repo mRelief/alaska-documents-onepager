@@ -15,11 +15,17 @@
     },
 
     render: function () {
-      return dom.div({ className: 'column' },
-        dom.h2({}, 'Results'),
-        dom.br({}),
+      return dom.div({ className: this.divClassName(), id: 'results-column' },
         this.renderSectionContent()
       );
+    },
+
+    divClassName: function () {
+      if (this.props.allQuestionsAnswered()) {
+        return 'column answered';
+      } else {
+        return 'column';
+      };
     },
 
     renderSectionContent: function () {

@@ -14,13 +14,38 @@ html, body {
   padding: 20px;
 }
 
+* {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
 .column {
   float: left;
-  width: 40%;
   padding: 20px;
   margin: 20px;
-  height: 100%;
-  background-color: #f9f9f9;
+  height: 700px;
+}
+
+.column#questions-column {
+  background-color: #D4C1EC;
+  width: 60%;
+}
+
+.column#results-column {
+  background-color: white;
+  width: 20%;
+}
+
+.column#results-column.answered {
+  background-color: #EAE8BF;
+}
+
+#title {
+  background-color: #2B2D42;
+  color: white;
 }
 
 section {
