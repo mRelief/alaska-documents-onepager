@@ -48,7 +48,7 @@ h1 {
 
 .column#results-column.answered {
   width: 50%;
-  background-color: yellow;
+  background-color: #6EC4DF;
 }
 
 .column#questions-column.answered {
