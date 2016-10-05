@@ -160,13 +160,14 @@
       this.setState({ userSubmittedData: userSubmittedData });
     },
 
-    onClickNoneOfTheAboveIdentityDocs: function () {
+    onClickNoneOfTheAboveIdentityDocs: function (event) {
       var userSubmittedData = this.state.userSubmittedData;
+      var noneOfTheAboveChecked = event.target.checked;
 
       userSubmittedData['hasStateId'] = false;
       userSubmittedData['hasBirthCertificate'] = false;
       userSubmittedData['hasSocialSecurityCard'] = false;
-      userSubmittedData['noneOfTheAboveIdentity'] = true;
+      userSubmittedData['noneOfTheAboveIdentity'] = noneOfTheAboveChecked;
 
       this.setState({ userSubmittedData: userSubmittedData });
     },
