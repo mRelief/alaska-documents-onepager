@@ -10,18 +10,30 @@
     },
 
     render: function () {
-      if (this.props.isCitizen) return null;
+      if (this.props.isCitizen) {
+        return this.renderForCitizen();
+      } else {
+        return this.renderForNonCitizen();
+      };
+    },
 
+    renderForCitizen: function () {
       return dom.div({},
         dom.br({}),
-        dom.p({ className: 'result' }, 'You will need ONE of the following documents to verify your citizenship status:'),
+        dom.p({ className: 'result' },
+          'You will need ONE of the following documents to verify your citizenship status:'
+        ),
         dom.br({}),
         dom.ul({},
-          dom.li({}, 'Permanent Resident Card'),
-          dom.li({}, 'Work Authorization Card'),
-          dom.li({}, 'Affidavit of Support')
+          dom.li({}, 'Birth Certificate'),
+          dom.li({}, 'Certificate of Citizenship or Naturalization'),
+          dom.li({}, 'U.S. Passport')
         )
       )
+    },
+
+    renderForNonCitizen: function () {
+      return null;
     },
 
   });
