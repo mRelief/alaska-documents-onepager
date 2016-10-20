@@ -47,7 +47,7 @@
     incomeTypesToDocuments: function () {
       return {
         'employed': dom.span({},
-          dom.span({}, 'Either Pay Stubs for the Past 30 Days (2-3 Pay Stubs), '),
+          dom.span({}, 'Either pay stubs for the past 30 Days (2-3 pay stubs), '),
           dom.span({ style: { fontWeight: 'bold' } }, 'OR '),
           dom.a({
             href: 'http://dpaweb.hss.state.ak.us/e-forms/pdf/gen155.pdf',
@@ -56,7 +56,18 @@
           }, 'Form GEN155'),
           dom.span({}, ' if you don\'t have pay stubs')
         ),
-        'selfEmployed': 'Self-Employment Form: Spreadsheet, Handwritten ledgers, and/or notebooks',
+        'selfEmployed': dom.span({},
+          dom.span({},
+            'Spreadsheets, ledgers, or notebooks of your expenses, income, and/or tips ' +
+            '(you can use this '
+          ),
+          dom.a({
+            href: 'http://dpaweb.hss.state.ak.us/e-forms/pdf/gen156.pdf',
+            target: '_blank',
+            rel: 'noopener'
+          }, 'Self-Employment Business and/or Tip Ledger'),
+          dom.span({}, ')')
+        ),
         'rentalIncome': 'Bank Statements',
         'childSupport': 'Child Support Order or Copies of Checks from Former Partner',
         'unemploymentBenefits': 'Award Letter for Unemployment Benefits',
