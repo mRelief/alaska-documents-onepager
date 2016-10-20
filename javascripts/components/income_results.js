@@ -54,7 +54,11 @@
             target: '_blank',
             rel: 'noopener'
           }, 'Form GEN155'),
-          dom.span({}, ' if you don\'t have pay stubs')
+          dom.span({}, ' if you don\'t have pay stubs, '),
+          dom.span({ style: { fontWeight: 'bold'} } , 'OR '),
+          dom.span({},
+            'a written statement from your employer that includes hours worked and hourly rate of wages'
+          )
         ),
         'selfEmployed': dom.span({},
           dom.span({},
