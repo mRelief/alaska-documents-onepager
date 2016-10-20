@@ -67,42 +67,40 @@
     },
 
     renderReminders: function () {
+      return dom.div({},
+        dom.div({
+          style: {
+            fontStyle: 'italic',
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+          }
+        }, 'Important reminders: '),
+        dom.br({}),
+        dom.ul({}, this.renderReminderList())
+      );
+    },
+
+    renderReminderList: function () {
+      return this.reminders().map(function (reminder) {
+        return dom.li({}, reminder);
+      });
+    },
+
+    reminders: function () {
+      var reminders = [
+        'Documents must be submitted within 10 days of application submission, ' +
+        'otherwise they are automatically denied.',
+        'If you are unable to verify your identity or residency with documents, ' +
+        'you may be able to verfiy these with a phone call to a friend.'
+      ];
+
       if (this.props.userSubmittedData.undocumented === true) {
-        return dom.div({},
-          dom.div({
-            style: {
-              fontStyle: 'italic',
-              fontWeight: 'bold',
-              textDecoration: 'underline',
-            }
-          }, 'Important reminders: '),
-          dom.br({}),
-          dom.ul({},
-            dom.li({},
-              'Documents must be submitted within 10 days of application submission, ' +
-              'otherwise they are automatically denied.'
-            ),
-            dom.br({}),
-            dom.li({},
-              'Undocumented status is not necessarily a barrier to getting assistance.'
-            )
-          )
-        );
-      } else {
-        return dom.div({},
-          dom.span({
-            style: {
-              fontStyle: 'italic',
-              fontWeight: 'bold'
-            }
-          }, 'A Reminder: '),
-          dom.span({},
-            'Documents must be submitted within 10 days of application submission, ' +
-            'otherwise they are automatically denied.'
-          )
+        reminders.push(
+          'Undocumented status is not necessarily a barrier to getting assistance.'
         );
       };
 
+      return reminders;
     },
 
   });
