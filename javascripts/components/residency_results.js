@@ -60,11 +60,11 @@
       var documents = [];
 
       if (this.props.renting) {
-        documents.push('Rent Receipt', 'Rental Agreement', 'Utility Bills');
+        documents.push('Rent Receipt', 'Utility Bills');
       };
 
       if (this.props.ownsHome) {
-        documents.push('Homeowners Insurance', 'Property Tax Bill', 'Mortgage Statement', 'Utility Bills');
+        documents.push('Homeowners Insurance', 'Property Tax Bill', 'Utility Bills');
       };
 
       documents.push('Mail', 'Medical Records');
