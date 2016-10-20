@@ -60,8 +60,8 @@
         onClickCheckbox: this.onClickCheckbox,
         onClickIdentityCheckbox: this.onClickIdentityCheckbox,
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
-        onClickYesCitizen: this.onClickYesCitizen,
-        onClickNoCitizen: this.onClickNoCitizen,
+        onClickYesAllCitizens: this.onClickYesAllCitizens,
+        onClickNoAllCitizens: this.onClickNoAllCitizens,
         onClickLivingSituation: this.onClickLivingSituation,
         onClickNoIncome: this.onClickNoIncome,
         onClickNoneOfTheAboveIdentityDocs: this.onClickNoneOfTheAboveIdentityDocs,
@@ -99,7 +99,7 @@
     },
 
     additionalCitizenshipQuestionAnswered: function () {
-      if (this.state.userSubmittedData.isCitizen === true) return true;   // Skip validation if we don't
+      if (this.state.userSubmittedData.allCitizens === true) return true;   // Skip validation if we don't
                                                                           // render this section.
       return this.questionsAnswered('additionalCitizenshipQuestion');
     },
@@ -130,15 +130,15 @@
       this.setState({ userSubmittedData: userSubmittedData });
     },
 
-    onClickYesCitizen: function () {
+    onClickYesAllCitizens: function () {
       var userSubmittedData = this.state.userSubmittedData;
-      userSubmittedData['isCitizen'] = true;
+      userSubmittedData['allCitizens'] = true;
       this.setState({ userSubmittedData: userSubmittedData });
     },
 
-    onClickNoCitizen: function () {
+    onClickNoAllCitizens: function () {
       var userSubmittedData = this.state.userSubmittedData;
-      userSubmittedData['isCitizen'] = false;
+      userSubmittedData['allCitizens'] = false;
       this.setState({ userSubmittedData: userSubmittedData });
     },
 

@@ -10,8 +10,8 @@
       onClickIdentityCheckbox: React.PropTypes.func.isRequired,
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
-      onClickYesCitizen: React.PropTypes.func.isRequired,
-      onClickNoCitizen: React.PropTypes.func.isRequired,
+      onClickYesAllCitizens: React.PropTypes.func.isRequired,
+      onClickNoAllCitizens: React.PropTypes.func.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
       onClickNoIncome: React.PropTypes.func.isRequired,
       onClickNoneOfTheAboveIdentityDocs: React.PropTypes.func.isRequired,
@@ -246,14 +246,14 @@
         dom.input({
           type: 'radio',
           name: 'citizenshipQuestion',
-          onClick: this.props.onClickYesCitizen,
+          onClick: this.props.onClickYesAllCitizens,
         }),
         dom.label({}, 'Yes'),
         dom.br({}),
         dom.input({
           type: 'radio',
           name: 'citizenshipQuestion',
-          onClick: this.props.onClickNoCitizen,
+          onClick: this.props.onClickNoAllCitizens,
         }),
         dom.label({}, 'No'),
         dom.br({})
@@ -261,7 +261,7 @@
     },
 
     renderNonCitizenOptions: function () {
-      if (this.props.userSubmittedData.isCitizen === true) return null;
+      if (this.props.userSubmittedData.allCitizens === true) return null;
 
       return dom.section({},
         dom.p({ className: 'question' },

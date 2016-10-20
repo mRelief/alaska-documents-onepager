@@ -10,11 +10,19 @@
     },
 
     render: function () {
-      var outcome = this.userCitizenshipDocuments().map(function (documents) {
-        return this.renderForCitizenshipDocuments(documents);
-      }.bind(this));
+      if (this.props.userSubmittedData.allCitizens === true) {
 
-      return dom.div({}, outcome);
+        var documents = this.citizenshipStatusesToDocuments().isCitizen;
+        return this.renderForCitizenshipDocuments(documents);
+
+      } else {
+
+        var outcome = this.userCitizenshipDocuments().map(function (documents) {
+          return this.renderForCitizenshipDocuments(documents);
+        }.bind(this));
+
+        return dom.div({}, outcome);
+      };
     },
 
     renderForCitizenshipDocuments: function (documents) {
