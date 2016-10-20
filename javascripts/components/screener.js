@@ -75,9 +75,10 @@
 
     allQuestionsAnswered: function () {
       return this.questionsAnswered('identityQuestion') &&
-             this.residencyQuestionAnswered() &&
              this.questionsAnswered('incomeQuestion') &&
-             this.questionsAnswered('citizenshipQuestion')
+             this.questionsAnswered('citizenshipQuestion') &&
+             this.residencyQuestionAnswered() &&
+             this.additionalCitizenshipQuestionAnswered()
     },
 
    questionsAnswered: function (inputName) {
@@ -92,6 +93,12 @@
       if (this.renderResidencySection() === false) return true;   // Skip validation if we don't
                                                                   // render this section.
       return this.questionsAnswered('residencyQuestion');
+    },
+
+    additionalCitizenshipQuestionAnswered: function () {
+      if (this.state.userSubmittedData.isCitizen === true) return true;   // Skip validation if we don't
+                                                                          // render this section.
+      return this.questionsAnswered('additionalCitizenshipQuestion');
     },
 
     onClickCheckbox: function (event) {
@@ -173,7 +180,7 @@
 
     renderResidencySection: function () {
       var userSubmittedData = this.state.userSubmittedData;
-      var identityQuestionAnswered = this.identityQuestionAnswered();
+      var identityQuestionAnswered = this.questionsAnswered('identityQuestion');
 
       return (identityQuestionAnswered && !userSubmittedData.hasStateId);
     },
