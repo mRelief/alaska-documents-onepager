@@ -74,14 +74,16 @@
     },
 
     allQuestionsAnswered: function () {
-      return this.identityQuestionAnswered() &&
+      return this.questionsAnswered('identityQuestion') &&
              this.residencyQuestionAnswered() &&
-             this.incomeQuestionAnswered() &&
-             this.citizenshipQuestionAnswered()
+             this.questionsAnswered('incomeQuestion') &&
+             this.questionsAnswered('citizenshipQuestion')
     },
 
-    identityQuestionAnswered: function () {
-      return $('input[name="identityQuestion"]').get().map(function(checkbox) {
+   questionsAnswered: function (inputName) {
+      var inputSelector = 'input[name=' + '"' + inputName + '"]';
+
+      return $(inputSelector).get().map(function(checkbox) {
         return checkbox.checked;
       }).reduce(function(a, b) { return (a || b); }, false);
     },
@@ -89,22 +91,7 @@
     residencyQuestionAnswered: function () {
       if (this.renderResidencySection() === false) return true;   // Skip validation if we don't
                                                                   // render this section.
-
-      return $('input[name="residencyQuestion"]').get().map(function(checkbox) {
-        return checkbox.checked;
-      }).reduce(function(a, b) { return (a || b); }, false);
-    },
-
-    incomeQuestionAnswered: function () {
-      return $('input[name="incomeQuestion"]').get().map(function(checkbox) {
-        return checkbox.checked;
-      }).reduce(function(a, b) { return (a || b); }, false);
-    },
-
-    citizenshipQuestionAnswered: function () {
-      return $('input[name="citizenshipQuestion"]').get().map(function(checkbox) {
-        return checkbox.checked;
-      }).reduce(function(a, b) { return (a || b); }, false);
+      return this.questionsAnswered('residencyQuestion');
     },
 
     onClickCheckbox: function (event) {
