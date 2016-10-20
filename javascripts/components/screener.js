@@ -26,7 +26,8 @@
           childSupport: false,
           rentalIncome: false,
           noneOfTheAboveIncome: false,
-          isCitizen: false,
+          isCitizen: true,
+
         }
       }
     },

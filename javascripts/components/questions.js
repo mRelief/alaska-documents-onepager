@@ -29,7 +29,8 @@
         this.renderIdentitySection(),
         this.renderResidencySection(),
         this.renderIncomeSection(),
-        this.renderCitizenshipSection()
+        this.renderCitizenshipSection(),
+        this.renderAdditionalCitizenshipOptions()
       );
     },
 
@@ -256,6 +257,83 @@
         dom.br({})
       );
     },
+
+    renderAdditionalCitizenshipOptions: function () {
+      if (this.props.userSubmittedData.isCitizen === true) return null;
+
+      return dom.section({},
+        dom.p({ className: 'question' },
+          'Which of the following citizenship categories describe your household?'
+        ),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Legal Permanent Resident'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Refugee'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Asylee'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Parolee'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Victims Of Trafficking'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'American Indian Born In Canada'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Conditional Entrant'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Deportation Withheld'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Cuban Or Haitian Entrant'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'U.S. Military Veteran, Active Duty Military'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident'),
+        dom.br({})
+      );
+    },
+
 
     noneOfTheAboveChecked: function () {
       return (!this.props.userSubmittedData.employed &&
