@@ -265,13 +265,31 @@
 
       return dom.section({},
         dom.p({ className: 'question' },
-          'Which of the following citizenship categories describe your household?'
+          dom.span({},
+            'Which of the following citizenship categories describe the members of your household?'
+          ),
+          dom.br({}),
+          dom.br({}),
+          dom.span({}, '(You can select more than one.)'),
+          dom.br({})
         ),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
         }),
         dom.label({}, 'Legal Permanent Resident'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'Undocumented'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+        }),
+        dom.label({}, 'U.S. Citizen'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
