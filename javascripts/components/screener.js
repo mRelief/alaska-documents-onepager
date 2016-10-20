@@ -27,9 +27,20 @@
           rentalIncome: false,
           noneOfTheAboveIncome: false,
           isCitizen: true,
-
+          undocumented: false,
+          legalPermanentResident: false,
+          refugee: false,
+          asylee: false,
+          parolee: false,
+          traffickingVictim: false,
+          americanIndianBornInCanada: false,
+          conditionalEntrant: false,
+          cubanOrHaitianEntrant: false,
+          deportationWithheld: false,
+          military: false,
+          batterSpouseOrChild: false,
         }
-      }
+      };
     },
 
     render: function () {
