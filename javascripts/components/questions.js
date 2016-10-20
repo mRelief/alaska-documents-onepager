@@ -134,7 +134,7 @@
           data: 'employed',
           checked: this.props.userSubmittedData.employed
          }),
-        dom.label({}, 'Employment'),
+        dom.label({}, 'Employment (in the past 60 days)'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
