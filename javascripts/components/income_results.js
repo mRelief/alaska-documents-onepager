@@ -16,85 +16,44 @@
     },
 
     render: function () {
-      return dom.div({},
-        this.renderAbsolutelyRequiredDocuments(),
-        this.renderDocumentsThatMayBeEVerified()
-      );
-    },
-
-    renderAbsolutelyRequiredDocuments: function () {
-      if (this.hasNoIncomeWithRequiredDocuments()) return null;
-
-      var documents = [];
-
-      if (this.props.employed) { documents.push(this.incomeTypesToDocuments()['employed']) };
-      if (this.props.selfEmployed) { documents.push(this.incomeTypesToDocuments()['selfEmployed']) };
-      if (this.props.rentalIncome) { documents.push(this.incomeTypesToDocuments()['rentalIncome']) };
+      var documents = this.documents();
+      if (documents.length === 0) return null;
 
       return dom.div({},
         dom.br({}),
         dom.p({ className: 'result' }, 'You will need these documents to verify your income:'),
         dom.br({}),
         dom.ul({},
-          documents.map(function (doc) { return dom.li({}, doc); })
+          documents.map(function (document) { return dom.li({}, document); })
         )
       );
     },
 
-    renderDocumentsThatMayBeEVerified: function () {
-      if (this.hasNoAdditionalIncome()) return null;
-
+    documents: function () {
       var documents = [];
+      var lookup = this.incomeTypesToDocuments();
 
-      if (this.props.unemploymentBenefits) {
-        documents.push(this.incomeTypesToDocuments()['unemploymentBenefits'])
-      };
+      if (this.props.employed) { documents.push(lookup['employed']) };
+      if (this.props.selfEmployed) { documents.push(lookup['selfEmployed']) };
+      if (this.props.rentalIncome) { documents.push(lookup['rentalIncome']) };
+      if (this.props.unemploymentBenefits) { documents.push(lookup['unemploymentBenefits']) };
+      if (this.props.retirementBenefits) { documents.push(lookup['retirementBenefits']) };
+      if (this.props.disabilityBenefits) { documents.push(lookup['disabilityBenefits']) };
+      if (this.props.childSupport) { documents.push(lookup['childSupport']) };
 
-      if (this.props.retirementBenefits) {
-        documents.push(this.incomeTypesToDocuments()['retirementBenefits'])
-      };
-
-      if (this.props.disabilityBenefits) {
-        documents.push(this.incomeTypesToDocuments()['disabilityBenefits'])
-      };
-
-      if (this.props.childSupport) {
-        documents.push(this.incomeTypesToDocuments()['childSupport'])
-      };
-
-      return dom.div({},
-        dom.br({}),
-        dom.p({ className: 'result' },
-          'The state may be able to electronically verify this information, ' +
-          'but you should bring in these documents just in case if you have them:'),
-        dom.br({}),
-        dom.ul({},
-          documents.map(function (doc) { return dom.li({}, doc); })
-        )
-      );
+      return documents;
     },
 
     incomeTypesToDocuments: function () {
       return {
-        'employed': 'Pay Stubs for the Past 30 Days, or a Statement from Your Employer as to Wages',
-        'selfEmployed': 'Self-Employment Bookkeeping Records',
+        'employed': 'Pay Stubs for the Past 30 Days (2-3 Pay Stubs) or Form GEN155',
+        'selfEmployed': 'Self-Employment Form: Spreadsheet, Handwritten ledgers, and/or notebooks',
         'rentalIncome': 'Bank Statements',
-        'childSupport': 'Child Support Order',
-        'unemploymentBenefits': 'Unemployment Benefits',
-        'disabilityBenefits': 'Disability Benefits',
-        'retirementBenefits': 'Retirement Benefits',
+        'childSupport': 'Child Support Order or Copies of Checks from Former Partner',
+        'unemploymentBenefits': 'Award Letter for Unemployment Benefits',
+        'disabilityBenefits': 'Award letter for Disability',
+        'retirementBenefits': 'Award Letter for Social Security (SSI)',
       };
-    },
-
-    hasNoIncomeWithRequiredDocuments: function () {
-      return (!this.props.employed && !this.props.selfEmployed && !this.props.rentalIncome);
-    },
-
-    hasNoAdditionalIncome: function () {
-      return (!this.props.childSupport &&
-              !this.props.unemploymentBenefits &&
-              !this.props.disabilityBenefits &&
-              !this.props.retirementBenefits)
     },
 
   });
