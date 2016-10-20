@@ -46,7 +46,16 @@
 
     incomeTypesToDocuments: function () {
       return {
-        'employed': 'Pay Stubs for the Past 30 Days (2-3 Pay Stubs) or Form GEN155',
+        'employed': dom.span({},
+          dom.span({}, 'Either Pay Stubs for the Past 30 Days (2-3 Pay Stubs), '),
+          dom.span({ style: { fontWeight: 'bold' } }, 'OR '),
+          dom.a({
+            href: 'http://dpaweb.hss.state.ak.us/e-forms/pdf/gen155.pdf',
+            target: '_blank',
+            rel: 'noopener'
+          }, 'Form GEN155'),
+          dom.span({}, ' if you don\'t have pay stubs')
+        ),
         'selfEmployed': 'Self-Employment Form: Spreadsheet, Handwritten ledgers, and/or notebooks',
         'rentalIncome': 'Bank Statements',
         'childSupport': 'Child Support Order or Copies of Checks from Former Partner',
