@@ -73,7 +73,7 @@
           dom.span({}, ')')
         ),
         'rentalIncome': 'Bank Statements',
-        'childSupport': 'Child Support Order or Copies of Checks from Former Partner',
+        'childSupport': 'Written Letter from Partner or State Agency',
         'unemploymentBenefits': 'Award Letter for Unemployment Benefits',
         'disabilityBenefits': 'Award letter for Disability',
         'retirementBenefits': 'Award Letter for Social Security (SSI)',
