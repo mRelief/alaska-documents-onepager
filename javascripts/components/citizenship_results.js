@@ -6,34 +6,52 @@
   window.shared.CitizenshipResults = React.createClass({
 
     propTypes: {
-      isCitizen: React.PropTypes.bool.isRequired,
+      userSubmittedData: React.PropTypes.object.isRequired,
     },
 
     render: function () {
-      if (this.props.isCitizen) {
-        return this.renderForCitizen();
-      } else {
-        return this.renderForNonCitizen();
-      };
+      var outcome = this.userCitizenshipDocuments().map(function (documents) {
+        return this.renderForCitizenshipDocuments(documents);
+      }.bind(this));
+
+      return dom.div({}, outcome);
     },
 
-    renderForCitizen: function () {
+    renderForCitizenshipDocuments: function (documents) {
+      var resultText = 'You will need ONE of the following documents for each ' +
+                       documents.description +
+                       ' household member:';
+
+      var documentsList = documents.list.map(function (document) {
+        return dom.li({}, document);
+      });
+
       return dom.div({},
         dom.br({}),
-        dom.p({ className: 'result' },
-          'You will need ONE of the following documents for each U.S. citizen household member:'
-        ),
+        dom.p({ className: 'result' }, resultText),
         dom.br({}),
-        dom.ul({},
-          dom.li({}, 'Birth Certificate'),
-          dom.li({}, 'Certificate of Citizenship or Naturalization'),
-          dom.li({}, 'U.S. Passport')
-        )
-      )
+        dom.ul({}, documentsList)
+      );
     },
 
-    renderForNonCitizen: function () {
-      return null;
+    citizenshipStatusesIndex: function () {
+      return Object.keys(this.citizenshipStatusesToDocuments());
+    },
+
+    userCitizenshipStatuses: function () {
+      var userSubmittedData = this.props.userSubmittedData;
+
+      return this.citizenshipStatusesIndex().filter(function (status) {
+        return (userSubmittedData[status]);
+      });
+    },
+
+    userCitizenshipDocuments: function () {
+      var documentsLookup = this.citizenshipStatusesToDocuments();
+
+      return this.userCitizenshipStatuses().map(function(status) {
+        return documentsLookup[status];
+      });
     },
 
     citizenshipStatusesToDocuments: function () {

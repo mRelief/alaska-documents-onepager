@@ -59,7 +59,7 @@
           rentalIncome: this.props.userSubmittedData.rentalIncome,
         }),
         createEl(CitizenshipResults, {
-          isCitizen: this.props.userSubmittedData.isCitizen
+          userSubmittedData: this.props.userSubmittedData,
         }),
         dom.br({}),
         dom.div({},
