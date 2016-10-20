@@ -20,7 +20,8 @@
 
     getInitialState: function () {
       return {
-        showMoreResidencyOptions: false
+        showMoreResidencyOptions: false,
+        showMoreCitizenshipOptions: false,
       };
     },
 
@@ -30,7 +31,7 @@
         this.renderResidencySection(),
         this.renderIncomeSection(),
         this.renderCitizenshipSection(),
-        this.renderAdditionalCitizenshipOptions()
+        this.renderNonCitizenOptions()
       );
     },
 
@@ -161,6 +162,7 @@
         }, 'Show more options');
       }
     },
+
     renderIncomeSection: function () {
       return dom.section({},
         dom.p({ className: 'question' }, 'Which of the following sources of income do you receive?'),
@@ -258,7 +260,7 @@
       );
     },
 
-    renderAdditionalCitizenshipOptions: function () {
+    renderNonCitizenOptions: function () {
       if (this.props.userSubmittedData.isCitizen === true) return null;
 
       return dom.section({},
@@ -283,6 +285,36 @@
         }),
         dom.label({}, 'Asylee'),
         dom.br({}),
+        this.renderAdditionalCitizenshipStatuses(),
+        this.renderShowMoreCitizenshipStatusesButton()
+      )
+    },
+
+    renderShowMoreCitizenshipStatusesButton: function () {
+      if (this.state.showMoreCitizenshipOptions) {
+        var text = 'Show Fewer Options';
+      } else {
+        var text = 'Show More Options';
+      };
+
+      return dom.a({
+        style: {
+          fontStyle: 'italic'
+        },
+        onClick: this.toggleAdditionalCitizenshipStatuses
+      }, text);
+    },
+
+    toggleAdditionalCitizenshipStatuses: function () {
+      this.setState({
+        showMoreCitizenshipOptions: !this.state.showMoreCitizenshipOptions
+      });
+    },
+
+    renderAdditionalCitizenshipStatuses: function () {
+      if (this.state.showMoreCitizenshipOptions === false) return null;
+
+      return dom.span({},
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
@@ -333,7 +365,6 @@
         dom.br({})
       );
     },
-
 
     noneOfTheAboveChecked: function () {
       return (!this.props.userSubmittedData.employed &&
