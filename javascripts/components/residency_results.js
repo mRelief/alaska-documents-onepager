@@ -35,14 +35,6 @@
         documents.push('Homeowners Insurance', 'Property Tax Bill', 'Mortgage Statement', 'Utility Bills');
       };
 
-      if (this.props.stayingInShelter) {
-        documents.push('Homeless Shelter Statement');
-      };
-
-      if (this.props.stayingWithFamilyOrFriends) {
-        documents.push('Letter from Family or Friend');
-      };
-
       documents.push('Mail', 'Medical Records');
 
       return documents;

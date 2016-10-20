@@ -120,47 +120,8 @@
           data: 'stayingWithFamilyOrFriends'
         }),
         dom.label({}, 'Staying With Family or Friends'),
-        dom.br({}),
-        this.renderMoreResidencyOptions(),
         dom.br({})
       );
-    },
-
-    renderMoreResidencyOptions: function () {
-      if (this.state.showMoreResidencyOptions) {
-        return dom.div({},
-          dom.input({
-            type: 'radio',
-            name: 'residencyQuestion',
-            onClick: this.props.onClickLivingSituation,
-          }),
-          dom.label({}, 'Staying in Car'),
-          dom.br({}),
-          dom.input({
-            type: 'radio',
-            name: 'residencyQuestion',
-            onClick: this.props.onClickLivingSituation,
-          }),
-          dom.label({}, 'Staying in Motel'),
-          dom.br({}),
-          dom.input({
-            type: 'radio',
-            name: 'residencyQuestion',
-            onClick: this.props.onClickLivingSituation,
-          }),
-          dom.label({}, 'Paying Rent In-Kind (work in exchange for rent)'),
-          dom.br({}),
-          dom.a({
-            className: 'show-more-options',
-            onClick: this.showMoreResidencyOptions
-          }, 'Show fewer options')
-        );
-      } else {
-        return dom.a({
-          className: 'show-more-options',
-          onClick: this.showMoreResidencyOptions
-        }, 'Show more options');
-      }
     },
 
     renderIncomeSection: function () {
