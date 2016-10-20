@@ -72,7 +72,7 @@
           ]
         },
         refugee: {
-          description: 'refugee',
+          description: 'Refugee',
           list: [
             'I-94 stamped showing admission under section 207 of the INA and date of entry to the U.S.',
             'I-688B annotated 274a.12(a)(3)',
@@ -87,7 +87,7 @@
           ]
         },
         asylee: {
-          description: '',
+          description: 'Asylee',
           list: [
             'I-94 stamped showing grant of asylum under section 208 and date of entry',
             'A grant letter from the Asylum Office of the USCIS',
@@ -97,13 +97,13 @@
           ]
         },
         parolee: {
-          description: '',
+          description: 'Parolee',
           list: [
             'I-94 annotated with stamp showing grant of parole under 212(d)(5) and a date showing granting of parole for at least 1 year'
           ]
         },
         traffickingVictim: {
-          description: '',
+          description: 'Trafficking Victim',
           list: [
             'Letter of certification from the Office of Refugee Resettlement (ORR)  The caseworker must verify the validity of this letter and notify ORR  of the benefits for which the individual has applied by calling the toll-free trafficking verification line at 1-866-401-5510',
             'Form I-797a indicating Class T-1 Visa',
@@ -111,7 +111,7 @@
           ]
         },
         americanIndianBornInCanada: {
-          description: '',
+          description: 'American Indian Born in Canada',
           list: [
             'Birth or baptismal certificate issued on a reservation',
             'Tribal records',
@@ -120,7 +120,7 @@
           ]
         },
         conditionalEntrant: {
-          description: '',
+          description: 'Conditional Entrant',
           list: [
             'I-94 with stamp showing admission under 203(a)(7), refugee-conditional entry',
             'I-688B annotated 274a.12(a)(3)',
@@ -128,7 +128,7 @@
           ]
         },
         cubanOrHaitianEntrant: {
-          description: '',
+          description: 'Cuban or Haitian Entrant',
           list: [
             'I-94 with stamp showing parole as Cuban/Haitian Entrant under section 212(d)(5) of the INA',
             'Form I-551 with code CU6, CU7, CH6',
@@ -136,7 +136,7 @@
           ]
         },
         deportationWithheld: {
-          description: '',
+          description: 'Deportation Withheld',
           list: [
             'Order of an immigration judge showing deportation withheld under section 243(h) and date of grant',
             'I-688B annotated 274a.12(a)(10)',
@@ -144,7 +144,7 @@
           ]
         },
         military: {
-          description: '',
+          description: 'U.S. Military Veteran or Active Duty Military',
           list: [
             'Green Form DD-2 marked ACTIVE',
             'A current order showing the individual is on full-time duty in the U.S. Army, Navy, Air Force, Marine Corps, or Coast Guard (Reserves are not considered active duty)',
@@ -153,7 +153,7 @@
           ]
         },
         batterSpouseOrChild: {
-          description: '',
+          description: 'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident',
           list: [
             'Approved or pending I-130 or I-360 petition showing a prima facie case that he or she is protected under the Violence Against Women Act, and verification that the individual responsible for the battery or cruelty is no longer living in the household of the victim.'
           ]
