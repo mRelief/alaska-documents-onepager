@@ -319,24 +319,18 @@
     },
 
     renderShowMoreCitizenshipStatusesButton: function () {
-      if (this.state.showMoreCitizenshipOptions) {
-        var text = 'Show Fewer Options';
-      } else {
-        var text = 'Show More Options';
-      };
+      if (this.state.showMoreCitizenshipOptions) return true;
 
       return dom.a({
         style: {
           fontStyle: 'italic'
         },
         onClick: this.toggleAdditionalCitizenshipStatuses
-      }, text);
+      }, 'Show More Options');
     },
 
     toggleAdditionalCitizenshipStatuses: function () {
-      this.setState({
-        showMoreCitizenshipOptions: !this.state.showMoreCitizenshipOptions
-      });
+      this.setState({ showMoreCitizenshipOptions: true });
     },
 
     renderAdditionalCitizenshipStatuses: function () {
@@ -348,6 +342,7 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'parolee',
+          checked: (this.props.userSubmittedData.parolee)
         }),
         dom.label({}, 'Parolee'),
         dom.br({}),
@@ -356,6 +351,7 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'traffickingVictim',
+          checked: (this.props.userSubmittedData.traffickingVictim)
         }),
         dom.label({}, 'Victims Of Trafficking'),
         dom.br({}),
@@ -364,6 +360,7 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'americanIndianBornInCanada',
+          checked: (this.props.userSubmittedData.americanIndianBornInCanada)
         }),
         dom.label({}, 'American Indian Born In Canada'),
         dom.br({}),
@@ -371,7 +368,8 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'conditionalEntrant'
+          data: 'conditionalEntrant',
+          checked: (this.props.userSubmittedData.conditionalEntrant)
         }),
         dom.label({}, 'Conditional Entrant'),
         dom.br({}),
@@ -379,7 +377,8 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'deportationWithheld'
+          data: 'deportationWithheld',
+          checked: (this.props.userSubmittedData.deportationWithheld)
         }),
         dom.label({}, 'Deportation Withheld'),
         dom.br({}),
@@ -388,6 +387,7 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'cubanOrHaitianEntrant',
+          checked: (this.props.userSubmittedData.cubanOrHaitianEntrant)
         }),
         dom.label({}, 'Cuban Or Haitian Entrant'),
         dom.br({}),
@@ -396,6 +396,7 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'military',
+          checked: (this.props.userSubmittedData.military)
         }),
         dom.label({}, 'U.S. Military Veteran, Active Duty Military'),
         dom.br({}),
@@ -403,7 +404,8 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'batterSpouseOrChild',
+          data: 'batteredSpouseOrChild',
+          checked: (this.props.userSubmittedData.batteredSpouseOrChild)
         }),
         dom.label({}, 'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident'),
         dom.br({})

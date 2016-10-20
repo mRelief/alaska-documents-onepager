@@ -41,7 +41,7 @@
           cubanOrHaitianEntrant: false,
           deportationWithheld: false,
           military: false,
-          batterSpouseOrChild: false,
+          batteredSpouseOrChild: false,
         }
       };
     },
@@ -100,7 +100,7 @@
 
     additionalCitizenshipQuestionAnswered: function () {
       if (this.state.userSubmittedData.allCitizens === true) return true;   // Skip validation if we don't
-                                                                          // render this section.
+                                                                            // render this section.
       return this.questionsAnswered('additionalCitizenshipQuestion');
     },
 
