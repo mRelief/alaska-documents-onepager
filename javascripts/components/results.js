@@ -62,17 +62,47 @@
           userSubmittedData: this.props.userSubmittedData,
         }),
         dom.br({}),
-        dom.div({},
+        this.renderReminders()
+      );
+    },
+
+    renderReminders: function () {
+      if (this.props.userSubmittedData.undocumented === true) {
+        return dom.div({},
+          dom.div({
+            style: {
+              fontStyle: 'italic',
+              fontWeight: 'bold',
+              textDecoration: 'underline',
+            }
+          }, 'Important reminders: '),
+          dom.br({}),
+          dom.ul({},
+            dom.li({},
+              'Documents must be submitted within 10 days of application submission, ' +
+              'otherwise they are automatically denied.'
+            ),
+            dom.br({}),
+            dom.li({},
+              'Undocumented status is not necessarily a barrier to getting assistance.'
+            )
+          )
+        );
+      } else {
+        return dom.div({},
           dom.span({
             style: {
               fontStyle: 'italic',
               fontWeight: 'bold'
             }
           }, 'A Reminder: '),
-          'Documents must be submitted within 10 days of application submission, ' +
-          'otherwise they are automatically denied.'
-        )
-      );
+          dom.span({},
+            'Documents must be submitted within 10 days of application submission, ' +
+            'otherwise they are automatically denied.'
+          )
+        );
+      };
+
     },
 
   });
