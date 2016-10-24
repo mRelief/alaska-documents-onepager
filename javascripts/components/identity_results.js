@@ -39,13 +39,18 @@
           dom.p({ className: 'result' }, 'You will need to bring ONE of the documents from this list to prove your identity:'),
           dom.br({}),
           dom.ul({},
-            dom.li({}, 'Any document with Name and Address issued from a third party'),
-            dom.li({}, 'Driver\'s License'),
-            dom.li({}, 'Work ID Card'),
-            dom.li({}, 'Bank Statement'),
-            dom.li({}, 'School Photo ID'),
-            dom.li({}, 'U.S. Military Card'),
-            dom.li({}, 'Voter Registration Card')
+            dom.li({}, 'Any document with Name and Address issued from a third party, such as:',
+              dom.br({}),
+              dom.br({}),
+              dom.ul({},
+                dom.li({}, 'Driver\'s License'),
+                dom.li({}, 'Work ID Card'),
+                dom.li({}, 'Bank Statement'),
+                dom.li({}, 'School Photo ID'),
+                dom.li({}, 'U.S. Military Card'),
+                dom.li({}, 'Voter Registration Card')
+              )
+            )
           )
         );
       };
