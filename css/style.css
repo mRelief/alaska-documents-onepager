@@ -1,29 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 #title {
   width: 100%;
   padding: 20px;
-}
-
-* {
-  font-size: 18px;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-#results-column h1 {
-  font-weight: normal;
 }
 
 .column {
@@ -38,23 +15,23 @@ h1 {
 .column#questions-column {
   padding: 20px;
   background-color: #6EC4DF;
-  width: 50%;
+  width: 40%;
   margin-left: 20px;
 }
 
 .column#results-column {
   padding: 30px;
   background-color: white;
-  width: 30%;
+  width: 40%;
 }
 
 .column#results-column.answered {
-  width: 50%;
+  width: 40%;
   background-color: #6EC4DF;
 }
 
 .column#questions-column.answered {
-  width: 30%;
+  width: 40%;
 }
 
 #title {
