@@ -30,7 +30,6 @@
 
     renderSectionContent: function () {
       if (this.props.allQuestionsAnswered()) {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
         return this.renderResults();
       } else {
         return 'Please answer all questions to get your results.';
