@@ -82,7 +82,10 @@
 
     renderReminderList: function () {
       return this.reminders().map(function (reminder) {
-        return dom.li({}, reminder);
+        return dom.div({},
+          dom.li({}, reminder),
+          dom.br({})
+        );
       });
     },
 
