@@ -88,9 +88,20 @@
    questionsAnswered: function (inputName) {
       var inputSelector = 'input[name=' + '"' + inputName + '"]';
 
-      return $(inputSelector).get().map(function(checkbox) {
+      var answered = $(inputSelector).get().map(function(checkbox) {
         return checkbox.checked;
       }).reduce(function(a, b) { return (a || b); }, false);
+
+      var sectionSelector = 'section[name=' + '"' + inputName + '"]';
+      var section = $(sectionSelector);
+
+      if (answered) {
+        section.addClass('answered');
+      } else {
+        section.removeClass('answered');
+      }
+
+      return answered;
     },
 
     residencyQuestionAnswered: function () {

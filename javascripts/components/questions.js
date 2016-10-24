@@ -44,7 +44,7 @@
     },
 
     renderIdentitySection: function () {
-      return dom.section({},
+      return dom.section({ name: 'identityQuestion' },
         dom.p({ className: 'question' }, 'Which identity documents do you have easy access to?'),
         dom.input({
           type: 'checkbox',
@@ -87,7 +87,7 @@
     renderResidencySection: function () {
       if (this.props.renderResidencySection() === false) return null;
 
-      return dom.section({},
+      return dom.section({ name: 'residencyQuestion' },
         dom.p({ className: 'question' }, 'Which best describes your living situation?'),
         dom.input({
           type: 'radio',
@@ -125,7 +125,7 @@
     },
 
     renderIncomeSection: function () {
-      return dom.section({},
+      return dom.section({ name: 'incomeQuestion' },
         dom.p({ className: 'question' }, 'Which of the following sources of income do you receive?'),
         dom.input({
           type: 'checkbox',
@@ -202,7 +202,7 @@
     },
 
     renderCitizenshipSection: function () {
-      return dom.section({},
+      return dom.section({ name: 'citizenshipQuestion' },
         dom.p({ className: 'question' }, 'Is everyone in your household a U.S. citizen?'),
         dom.input({
           type: 'radio',
@@ -224,7 +224,7 @@
     renderNonCitizenOptions: function () {
       if (this.props.userSubmittedData.allCitizens === true) return null;
 
-      return dom.section({},
+      return dom.section({ name: 'additionalCitizenshipQuestion' },
         dom.p({ className: 'question' },
           dom.span({},
             'Which of the following citizenship categories describe the members of your household?'

@@ -28,20 +28,22 @@ h1 {
 
 .column {
   float: left;
-  padding: 20px;
   flex-grow: 1;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
+  border-radius: 5px;
 }
 
 .column#questions-column {
+  padding: 20px;
   background-color: #6EC4DF;
   width: 50%;
   margin-left: 20px;
 }
 
 .column#results-column {
+  padding: 30px;
   background-color: white;
   width: 30%;
 }
@@ -53,7 +55,6 @@ h1 {
 
 .column#questions-column.answered {
   width: 30%;
-  background-color: white;
 }
 
 #title {
@@ -63,6 +64,12 @@ h1 {
 
 section {
   margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+section.answered {
+  background-color: #6edfc2;
 }
 
 h3 {
@@ -94,8 +101,8 @@ li {
 }
 
 p.question {
-  font-weight: bold;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 #parent-container {
