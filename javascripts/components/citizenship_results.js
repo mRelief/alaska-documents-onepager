@@ -166,6 +166,13 @@
             'Approved or pending I-130 or I-360 petition showing a prima facie case that he or she is protected under the Violence Against Women Act, and verification that the individual responsible for the battery or cruelty is no longer living in the household of the victim.'
           ]
         },
+        specialImmigrant: {
+          description: 'Special Immigrant from Iraq or Afghanistan',
+          list: [
+            'I-94',
+             'Passport stamped with an "S" category'
+          ]
+        }
       };
     },
 

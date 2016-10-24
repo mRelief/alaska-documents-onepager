@@ -365,6 +365,15 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
+          data: 'specialImmigrant',
+          checked: (this.props.userSubmittedData.specialImmigrant)
+        }),
+        dom.label({}, 'Special Immigrant from Iraq or Afghanistan'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
           data: 'batteredSpouseOrChild',
           checked: (this.props.userSubmittedData.batteredSpouseOrChild)
         }),

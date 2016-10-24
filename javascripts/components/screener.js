@@ -41,6 +41,7 @@
           cubanOrHaitianEntrant: false,
           deportationWithheld: false,
           military: false,
+          specialImmigrant: false,
           batteredSpouseOrChild: false,
         }
       };
