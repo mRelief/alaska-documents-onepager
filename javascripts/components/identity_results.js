@@ -44,6 +44,7 @@
               dom.br({}),
               dom.ul({},
                 dom.li({}, 'Driver\'s License'),
+                dom.li({}, 'Mail'),
                 dom.li({}, 'Work ID Card'),
                 dom.li({}, 'Bank Statement'),
                 dom.li({}, 'School Photo ID'),
