@@ -65,38 +65,6 @@
       };
     },
 
-    renderShowMoreCitizenshipStatusesButton: function () {
-      if (this.state.showMoreCitizenshipOptions) return true;
-
-      return dom.a({
-        style: {
-          fontStyle: 'italic'
-        },
-        onClick: this.toggleAdditionalCitizenshipStatuses
-      }, 'Show More Options');
-    },
-
-    toggleAdditionalCitizenshipStatuses: function () {
-      this.setState({ showMoreCitizenshipOptions: true });
-    },
-
-    noneOfTheAboveChecked: function () {
-      return (!this.props.userSubmittedData.employed &&
-              !this.props.userSubmittedData.unemploymentBenefits &&
-              !this.props.userSubmittedData.retirementBenefits &&
-              !this.props.userSubmittedData.selfEmployed &&
-              !this.props.userSubmittedData.disabilityBenefits &&
-              !this.props.userSubmittedData.childSupport &&
-              !this.props.userSubmittedData.rentalIncome)
-    },
-
-    showMoreIdentityOptions: function () {
-      this.setState({ showMoreIdentityOptions: !this.state.showMoreIdentityOptions });
-    },
-
-    showMoreResidencyOptions: function () {
-      this.setState({ showMoreResidencyOptions: !this.state.showMoreResidencyOptions });
-    }
 
   });
 })();
