@@ -6,8 +6,8 @@
 
     propTypes: {
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
-      userSubmittedData: React.PropTypes.func.isRequired,
       onClickNoIncome: React.PropTypes.func.isRequired,
+      userSubmittedData: React.PropTypes.object.isRequired,
     },
 
     render: function () {
