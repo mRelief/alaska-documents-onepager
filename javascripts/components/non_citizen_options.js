@@ -10,6 +10,8 @@
     },
 
     render: function () {
+      if (this.props.userSubmittedData.allCitizens) return null;
+
       return dom.section({ name: 'additionalCitizenshipQuestion' },
         dom.p({ className: 'question' },
           dom.span({},
