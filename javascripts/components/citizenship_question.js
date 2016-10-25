@@ -19,16 +19,18 @@
         dom.input({
           type: 'radio',
           name: 'citizenshipQuestion',
+          id: 'yesAllCitizens',
           onClick: this.props.onClickYesAllCitizens,
         }),
-        dom.label({}, 'Yes'),
+        dom.label({ htmlFor: 'yesAllCitizens' }, 'Yes'),
         dom.br({}),
         dom.input({
           type: 'radio',
           name: 'citizenshipQuestion',
+          id: 'noAllCitizens',
           onClick: this.props.onClickNoAllCitizens,
         }),
-        dom.label({}, 'No'),
+        dom.label({ htmlFor: 'noAllCitizens' }, 'No'),
         dom.br({})
       );
     },
