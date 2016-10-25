@@ -1,8 +1,3 @@
-#title {
-  width: 100%;
-  padding: 20px;
-}
-
 .column {
   float: left;
   flex-grow: 1;
@@ -32,11 +27,6 @@
 
 .column#questions-column.answered {
   width: 40%;
-}
-
-#title {
-  background-color: #2B2D42;
-  color: white;
 }
 
 section {
