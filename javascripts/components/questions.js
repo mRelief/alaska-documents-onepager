@@ -24,13 +24,6 @@
       userSubmittedData: React.PropTypes.object.isRequired,
     },
 
-    getInitialState: function () {
-      return {
-        showMoreResidencyOptions: false,
-        showMoreCitizenshipOptions: false,
-      };
-    },
-
     render: function () {
       return dom.div({ className: this.divClassName(), id: 'questions-column' },
         createEl(IdentityQuestion, {
@@ -65,7 +58,6 @@
         return 'column';
       };
     },
-
 
   });
 })();
