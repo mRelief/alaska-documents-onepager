@@ -50,8 +50,11 @@
 
     componentDidUpdate (prevProps, prevState) {
       var firstUnanswered = $('.unanswered')[0];
-      var top = $(firstUnanswered).offset().top;
-      $('html, body').animate({ scrollTop: top }, 600);
+
+      if (firstUnanswered) {
+        var top = $(firstUnanswered).offset().top;
+        $('html, body').animate({ scrollTop: top }, 600);
+      };
     },
 
     render: function () {
@@ -141,6 +144,8 @@
 
     onClickYesAllCitizens: function () {
       var userSubmittedData = this.state.userSubmittedData;
+      $('html, body').animate({ scrollTop: 0 }, 600);
+
       userSubmittedData['allCitizens'] = true;
       this.setState({
         answeredCitizenship: true,
