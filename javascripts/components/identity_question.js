@@ -20,36 +20,40 @@
           type: 'checkbox',
           name: 'identityQuestion',
           onClick: this.props.onClickIdentityCheckbox,
+          id: 'hasStateId',
           data: 'hasStateId',
           checked: this.props.userSubmittedData.hasStateId
         }),
-        dom.label({}, 'State I.D.'),
+        dom.label({ htmlFor: 'hasStateId' }, 'State I.D.'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
           onClick: this.props.onClickIdentityCheckbox,
+          id: 'hasBirthCertificate',
           data: 'hasBirthCertificate',
           checked: this.props.userSubmittedData.hasBirthCertificate
         }),
-        dom.label({}, 'Birth Certificate'),
+        dom.label({ htmlFor: 'hasBirthCertificate' }, 'Birth Certificate'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
           onClick: this.props.onClickIdentityCheckbox,
+          id: 'hasSocialSecurityCard',
           data: 'hasSocialSecurityCard',
           checked: this.props.userSubmittedData.hasSocialSecurityCard
         }),
-        dom.label({}, 'Social Security Card'),
+        dom.label({ htmlFor: 'hasSocialSecurityCard' }, 'Social Security Card'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'identityQuestion',
+          id: 'noneOfTheAboveIdentity',
           onClick: this.props.onClickNoneOfTheAboveIdentityDocs,
           checked: this.props.userSubmittedData.noneOfTheAboveIdentity
         }),
-        dom.label({}, 'None of the Above'),
+        dom.label({ htmlFor: 'noneOfTheAboveIdentity' }, 'None of the Above'),
         dom.br({})
       );
     },
