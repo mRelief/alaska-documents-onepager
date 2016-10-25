@@ -34,7 +34,11 @@
     },
 
     sectionClassName() {
-      if (this.props.answered) return 'answered';
+      if (this.props.answered) {
+        return 'answered';
+      } else {
+        return 'unanswered'
+      };
     },
 
   });

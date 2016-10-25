@@ -55,7 +55,11 @@
     },
 
     sectionClassName() {
-      if (this.answered()) return 'answered';
+      if (this.answered()) {
+        return 'answered';
+      } else {
+        return 'unanswered'
+      };
     },
 
     answered: function () {

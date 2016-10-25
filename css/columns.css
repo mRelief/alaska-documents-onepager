@@ -24,10 +24,10 @@
 }
 
 .column#results-column.answered {
-  width: 55%;
+  width: 50%;
   background-color: #6EDFC2;
 }
 
 .column#questions-column.answered {
-  width: 25%;
+  width: 30%;
 }

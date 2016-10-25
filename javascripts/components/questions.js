@@ -49,8 +49,23 @@
         createEl(NonCitizenOptions, {
           onClickCheckbox: this.props.onClickCheckbox,
           userSubmittedData: this.props.userSubmittedData,
-        })
+        }),
+        this.renderAllDoneButton()
+       );
+     },
+
+    renderAllDoneButton: function () {
+      if (!this.props.allQuestionsAnswered()) return null;
+
+      return dom.section({},
+        dom.a({
+          onClick: this.scrollToTop
+        }, 'All done?')
       );
+    },
+
+    scrollToTop: function () {
+      $('html, body').animate({ scrollTop: 0 }, 0);
     },
 
     divClassName: function () {

@@ -48,6 +48,12 @@
       };
     },
 
+    componentDidUpdate (prevProps, prevState) {
+      var firstUnanswered = $('.unanswered')[0];
+      var top = $(firstUnanswered).offset().top;
+      $('html, body').animate({ scrollTop: top }, 600);
+    },
+
     render: function () {
       return dom.div({ id: 'parent-container' },
         this.renderQuestions(),

@@ -16,7 +16,9 @@
 
     render: function () {
       return dom.div({ className: this.divClassName(), id: 'results-column' },
-        this.renderSectionContent()
+        dom.section({},
+          this.renderSectionContent()
+        )
       );
     },
 

@@ -23,7 +23,6 @@
           dom.br({}),
           dom.br({}),
           dom.span({}, '(You can select more than one.)'),
-          dom.br({}),
           dom.br({})
         ),
         dom.input({
@@ -111,7 +110,11 @@
     },
 
     sectionClassName() {
-      if (this.answered()) return 'answered';
+      if (this.answered()) {
+        return 'answered';
+      } else {
+        return 'unanswered'
+      };
     },
 
     answered: function () {
@@ -134,6 +137,7 @@
         data.batteredSpouseOrChild
       );
     },
+
 
   });
 
