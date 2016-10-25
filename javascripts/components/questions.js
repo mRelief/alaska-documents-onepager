@@ -39,6 +39,7 @@
           onClickNoneOfTheAboveIdentityDocs: this.props.onClickNoneOfTheAboveIdentityDocs,
         }),
         createEl(ResidencyQuestion, {
+          userSubmittedData: this.props.userSubmittedData,
           onClickLivingSituation: this.props.onClickLivingSituation,
         }),
         createEl(IncomeQuestion, {

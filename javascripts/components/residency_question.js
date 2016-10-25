@@ -5,10 +5,13 @@
   window.shared.ResidencyQuestion = React.createClass({
 
     propTypes: {
+      userSubmittedData: React.PropTypes.object.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
     },
 
     render: function () {
+      if (!this.props.userSubmittedData.noneOfTheAboveIdentity) return null;
+
       return dom.section({ name: 'residencyQuestion' },
         dom.p({ className: 'question' }, 'Which best describes your living situation?'),
         dom.input({
