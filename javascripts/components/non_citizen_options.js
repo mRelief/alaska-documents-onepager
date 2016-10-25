@@ -32,41 +32,46 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'legalPermanentResident'
+          data: 'legalPermanentResident',
+          id: 'legalPermanentResident'
         }),
-        dom.label({}, 'Legal Permanent Resident'),
+        dom.label({ htmlFor: 'legalPermanentResident' }, 'Legal Permanent Resident'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'undocumented'
+          data: 'undocumented',
+          id: 'undocumented'
         }),
-        dom.label({}, 'Undocumented'),
+        dom.label({ htmlFor: 'undocumented' }, 'Undocumented'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'someButNotAllCitizens'
+          data: 'someButNotAllCitizens',
+          id: 'someButNotAllCitizens'
         }),
-        dom.label({}, 'U.S. Citizen'),
+        dom.label({ htmlFor: 'someButNotAllCitizens' }, 'U.S. Citizen'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'refugee'
+          data: 'refugee',
+          id: 'refugee'
         }),
-        dom.label({}, 'Refugee'),
+        dom.label({ htmlFor: 'refugee' }, 'Refugee'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'asylee'
+          data: 'asylee',
+          id: 'asylee'
         }),
-        dom.label({}, 'Asylee'),
+        dom.label({ id: 'asylee' }, 'Asylee'),
         dom.br({}),
         this.renderShowMoreOptionsButton(),
         this.renderAdditionalOptions()
@@ -94,54 +99,60 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'parolee',
+          id: 'parolee',
           checked: (this.props.userSubmittedData.parolee)
         }),
-        dom.label({}, 'Parolee'),
+        dom.label({ htmlFor: 'parolee' }, 'Parolee'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'traffickingVictim',
+          id: 'traffickingVictim',
           checked: (this.props.userSubmittedData.traffickingVictim)
         }),
-        dom.label({}, 'Victims Of Trafficking'),
+        dom.label({ htmlFor: 'traffickingVictim' }, 'Victims Of Trafficking'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'americanIndianBornInCanada',
+          id: 'americanIndianBornInCanada',
           checked: (this.props.userSubmittedData.americanIndianBornInCanada)
         }),
-        dom.label({}, 'American Indian Born In Canada'),
+        dom.label({ htmlFor: 'americanIndianBornInCanada' }, 'American Indian Born In Canada'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'conditionalEntrant',
+          id: 'conditionalEntrant',
           checked: (this.props.userSubmittedData.conditionalEntrant)
         }),
-        dom.label({}, 'Conditional Entrant'),
+        dom.label({ htmlFor: 'conditionalEntrant' }, 'Conditional Entrant'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'deportationWithheld',
+          id: 'deportationWithheld',
           checked: (this.props.userSubmittedData.deportationWithheld)
         }),
-        dom.label({}, 'Deportation Withheld'),
+        dom.label({ htmlFor: 'deportationWithheld' }, 'Deportation Withheld'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'cubanOrHaitianEntrant',
+          id: 'cubanOrHaitianEntrant',
           checked: (this.props.userSubmittedData.cubanOrHaitianEntrant)
         }),
-        dom.label({}, 'Cuban Or Haitian Entrant'),
+        dom.label({ htmlFor: 'cubanOrHaitianEntrant' }, 'Cuban Or Haitian Entrant'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
@@ -157,18 +168,24 @@
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'specialImmigrant',
+          id: 'specialImmigrant',
           checked: (this.props.userSubmittedData.specialImmigrant)
         }),
-        dom.label({}, 'Special Immigrant from Iraq or Afghanistan'),
+        dom.label({ htmlFor: 'specialImmigrant' }, 'Special Immigrant from Iraq or Afghanistan'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
           data: 'batteredSpouseOrChild',
+          id: 'batteredSpouseOrChild',
           checked: (this.props.userSubmittedData.batteredSpouseOrChild)
         }),
-        dom.label({}, 'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident'),
+        dom.label({
+          htmlFor: 'batteredSpouseOrChild'
+        },
+          'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident'
+        ),
         dom.br({})
       );
     },
