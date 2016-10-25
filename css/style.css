@@ -8,13 +8,6 @@ section.answered {
   background-color: #6edfc2;
 }
 
-h3 {
-  font-weight: normal;
-  font-size: 16px;
-  margin-bottom: 4px;
-  text-decoration: underline;
-}
-
 input {
   margin-right: 5px;
   margin-bottom: 10px;
@@ -34,13 +27,4 @@ a.show-more-options {
 
 li {
   margin-left: 20px;
-}
-
-p.question {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.result {
-  font-weight: bold;
 }

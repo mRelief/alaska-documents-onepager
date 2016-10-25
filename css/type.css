@@ -16,3 +16,18 @@ h1 {
   font-weight: normal;
 }
 
+p.question {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.result {
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-decoration: underline;
+}
