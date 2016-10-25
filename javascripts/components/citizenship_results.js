@@ -12,7 +12,7 @@
     render: function () {
       if (this.props.userSubmittedData.allCitizens === true) {
 
-        var documents = this.citizenshipStatusesToDocuments().isCitizen;
+        var documents = this.citizenshipStatusesToDocuments().someButNotAllCitizens;
         return this.renderForCitizenshipDocuments(documents);
 
       } else {
@@ -64,7 +64,7 @@
 
     citizenshipStatusesToDocuments: function () {
       return {
-        isCitizen: {
+        someButNotAllCitizens: {
           description: 'U.S. Citizen',
           list: [
             'Birth Certificate',

@@ -29,7 +29,7 @@
 
           // Citizenship data
           allCitizens: true,              // All family members are citizens
-          someButNotAllCitizens: false,    // Some but not all family members are citizens
+          someButNotAllCitizens: false,   // Some but not all family members are citizens
           undocumented: false,
           legalPermanentResident: false,
           refugee: false,

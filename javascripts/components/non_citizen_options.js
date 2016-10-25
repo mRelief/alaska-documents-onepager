@@ -48,7 +48,7 @@
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
           onClick: this.props.onClickCheckbox,
-          data: 'isCitizen'
+          data: 'someButNotAllCitizens'
         }),
         dom.label({}, 'U.S. Citizen'),
         dom.br({}),
