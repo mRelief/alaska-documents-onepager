@@ -12,7 +12,6 @@
 
     propTypes: {
       allQuestionsAnswered: React.PropTypes.func.isRequired,
-      renderResidencySection: React.PropTypes.func.isRequired,
       onClickIdentityCheckbox: React.PropTypes.func.isRequired,
       onClickCheckbox: React.PropTypes.func.isRequired,
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,

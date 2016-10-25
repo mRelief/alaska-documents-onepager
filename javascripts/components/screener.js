@@ -67,7 +67,6 @@
     renderQuestions: function () {
       return createEl(Questions, {
         allQuestionsAnswered: this.allQuestionsAnswered,
-        renderResidencySection: this.renderResidencySection,
         onClickCheckbox: this.onClickCheckbox,
         onClickIdentityCheckbox: this.onClickIdentityCheckbox,
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
@@ -105,8 +104,8 @@
     },
 
     residencyQuestionAnswered: function () {
-      if (this.renderResidencySection() === false) return true;   // Skip validation if we don't
-                                                                  // render this section.
+      if (!this.state.userSubmittedData.noneOfTheAboveIdentity) return true;  // Skip validation if we don't
+                                                                              // render this section.
       return this.questionsAnswered('residencyQuestion');
     },
 
@@ -199,13 +198,6 @@
       userSubmittedData['noneOfTheAboveIdentity'] = noneOfTheAboveChecked;
 
       this.setState({ userSubmittedData: userSubmittedData });
-    },
-
-    renderResidencySection: function () {
-      var userSubmittedData = this.state.userSubmittedData;
-      var identityQuestionAnswered = this.questionsAnswered('identityQuestion');
-
-      return (identityQuestionAnswered && !userSubmittedData.hasStateId);
     },
 
   });
