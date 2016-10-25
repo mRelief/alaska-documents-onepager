@@ -9,6 +9,12 @@
       userSubmittedData: React.PropTypes.object.isRequired,
     },
 
+    getInitialState() {
+      return {
+        showMoreOptions: false
+      };
+    },
+
     render: function () {
       if (this.props.userSubmittedData.allCitizens) return null;
 
@@ -62,6 +68,27 @@
         }),
         dom.label({}, 'Asylee'),
         dom.br({}),
+        this.renderShowMoreOptionsButton(),
+        this.renderAdditionalOptions()
+      );
+    },
+
+    renderShowMoreOptionsButton: function () {
+      if (this.state.showMoreOptions === true) return null;
+
+      return dom.a({
+        onClick: this.showMoreOptions
+      }, 'Show More Options');
+    },
+
+    showMoreOptions: function () {
+      this.setState({ showMoreOptions: true });
+    },
+
+    renderAdditionalOptions: function () {
+      if (this.state.showMoreOptions === false) return null;
+
+      return dom.div({},
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
@@ -146,6 +173,12 @@
       );
     },
 
+    componentDidUpdate: function () {
+      if (this.state.showMoreOptions) {
+        $('html, body').animate({ scrollTop: 10000 }, 0);  // Scroll to bottom
+      };
+    },
+
     sectionClassName() {
       if (this.answered()) {
         return 'answered';
@@ -174,7 +207,6 @@
         data.batteredSpouseOrChild
       );
     },
-
 
   });
 
