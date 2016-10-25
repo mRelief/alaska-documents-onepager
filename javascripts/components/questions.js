@@ -18,6 +18,7 @@
       onClickIncomeCheckbox: React.PropTypes.func.isRequired,
       onClickYesAllCitizens: React.PropTypes.func.isRequired,
       onClickNoAllCitizens: React.PropTypes.func.isRequired,
+      answeredCitizenship: React.PropTypes.bool.isRequired,
       onClickLivingSituation: React.PropTypes.func.isRequired,
       onClickNoIncome: React.PropTypes.func.isRequired,
       onClickNoneOfTheAboveIdentityDocs: React.PropTypes.func.isRequired,
@@ -36,11 +37,12 @@
           onClickLivingSituation: this.props.onClickLivingSituation,
         }),
         createEl(IncomeQuestion, {
-          onClickIncomeCheckbox: this.props.onClickIncomeCheckbox,
           userSubmittedData: this.props.userSubmittedData,
+          onClickIncomeCheckbox: this.props.onClickIncomeCheckbox,
           onClickNoIncome: this.props.onClickNoIncome,
         }),
         createEl(CitizenshipQuestion, {
+          answered: this.props.answeredCitizenship,
           onClickYesAllCitizens: this.props.onClickYesAllCitizens,
           onClickNoAllCitizens: this.props.onClickNoAllCitizens,
         }),

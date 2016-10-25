@@ -7,10 +7,14 @@
     propTypes: {
       onClickYesAllCitizens: React.PropTypes.func.isRequired,
       onClickNoAllCitizens: React.PropTypes.func.isRequired,
+      answered: React.PropTypes.bool.isRequired,
     },
 
     render: function () {
-      return dom.section({ name: 'citizenshipQuestion' },
+      return dom.section({
+          name: 'citizenshipQuestion',
+          className: this.sectionClassName()
+        },
         dom.p({ className: 'question' }, 'Is everyone in your household a U.S. citizen?'),
         dom.input({
           type: 'radio',
@@ -27,6 +31,10 @@
         dom.label({}, 'No'),
         dom.br({})
       );
+    },
+
+    sectionClassName() {
+      if (this.props.answered) return 'answered';
     },
 
   });

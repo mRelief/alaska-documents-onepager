@@ -29,7 +29,7 @@
 
           // Citizenship data
           allCitizens: true,              // All family members are citizens
-          someButNotAllCitizens: false,   // Some but not all family members are citizens
+          someButNotAllCitizens: false,    // Some but not all family members are citizens
           undocumented: false,
           legalPermanentResident: false,
           refugee: false,
@@ -43,7 +43,8 @@
           military: false,
           specialImmigrant: false,
           batteredSpouseOrChild: false,
-        }
+        },
+        answeredCitizenship: false,
       };
     },
 
@@ -63,6 +64,7 @@
         onClickIncomeCheckbox: this.onClickIncomeCheckbox,
         onClickYesAllCitizens: this.onClickYesAllCitizens,
         onClickNoAllCitizens: this.onClickNoAllCitizens,
+        answeredCitizenship: this.state.answeredCitizenship,
         onClickLivingSituation: this.onClickLivingSituation,
         onClickNoIncome: this.onClickNoIncome,
         onClickNoneOfTheAboveIdentityDocs: this.onClickNoneOfTheAboveIdentityDocs,
@@ -88,20 +90,9 @@
    questionsAnswered: function (inputName) {
       var inputSelector = 'input[name=' + '"' + inputName + '"]';
 
-      var answered = $(inputSelector).get().map(function(checkbox) {
+      return $(inputSelector).get().map(function(checkbox) {
         return checkbox.checked;
       }).reduce(function(a, b) { return (a || b); }, false);
-
-      var sectionSelector = 'section[name=' + '"' + inputName + '"]';
-      var section = $(sectionSelector);
-
-      if (answered) {
-        section.addClass('answered');
-      } else {
-        section.removeClass('answered');
-      }
-
-      return answered;
     },
 
     residencyQuestionAnswered: function () {
@@ -145,13 +136,19 @@
     onClickYesAllCitizens: function () {
       var userSubmittedData = this.state.userSubmittedData;
       userSubmittedData['allCitizens'] = true;
-      this.setState({ userSubmittedData: userSubmittedData });
+      this.setState({
+        answeredCitizenship: true,
+        userSubmittedData: userSubmittedData
+      });
     },
 
     onClickNoAllCitizens: function () {
       var userSubmittedData = this.state.userSubmittedData;
       userSubmittedData['allCitizens'] = false;
-      this.setState({ userSubmittedData: userSubmittedData });
+      this.setState({
+        answeredCitizenship: true,
+        userSubmittedData: userSubmittedData
+      });
     },
 
     onClickLivingSituation: function (event) {

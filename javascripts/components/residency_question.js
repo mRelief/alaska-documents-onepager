@@ -12,7 +12,10 @@
     render: function () {
       if (!this.props.userSubmittedData.noneOfTheAboveIdentity) return null;
 
-      return dom.section({ name: 'residencyQuestion' },
+      return dom.section({
+          name: 'residencyQuestion',
+          className: this.sectionClassName()
+        },
         dom.p({ className: 'question' }, 'Which best describes your living situation?'),
         dom.input({
           type: 'radio',
@@ -46,6 +49,21 @@
         }),
         dom.label({}, 'Staying With Family or Friends'),
         dom.br({})
+      );
+    },
+
+    sectionClassName() {
+      if (this.answered()) return 'answered';
+    },
+
+    answered: function () {
+      var data = this.props.userSubmittedData;
+
+      return (
+        data.renting ||
+        data.ownsHome ||
+        data.stayingInShelter ||
+        data.stayingWithFamilyOrFriends
       );
     },
 

@@ -11,7 +11,10 @@
     },
 
     render: function () {
-      return dom.section({ name: 'incomeQuestion' },
+      return dom.section({
+          name: 'incomeQuestion',
+          className: this.sectionClassName()
+        },
         dom.p({ className: 'question' }, 'Which of the following sources of income do you receive?'),
         dom.input({
           type: 'checkbox',
@@ -84,6 +87,25 @@
         }),
         dom.label({}, 'None of the Above'),
         dom.br({})
+      );
+    },
+
+    sectionClassName() {
+      if (this.answered()) return 'answered';
+    },
+
+    answered: function () {
+      var data = this.props.userSubmittedData;
+
+      return (
+        data.employed ||
+        data.unemploymentBenefits ||
+        data.retirementBenefits ||
+        data.selfEmployed ||
+        data.disabilityBenefits ||
+        data.childSupport ||
+        data.rentalIncome ||
+        data.noneOfTheAboveIncome
       );
     },
 

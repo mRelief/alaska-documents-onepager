@@ -6,13 +6,16 @@
 
     propTypes: {
       onClickCheckbox: React.PropTypes.func.isRequired,
-      userSubmittedData: React.PropTypes.func.isRequired,
+      userSubmittedData: React.PropTypes.object.isRequired,
     },
 
     render: function () {
       if (this.props.userSubmittedData.allCitizens) return null;
 
-      return dom.section({ name: 'additionalCitizenshipQuestion' },
+      return dom.section({
+          name: 'additionalCitizenshipQuestion',
+          className: this.sectionClassName()
+        },
         dom.p({ className: 'question' },
           dom.span({},
             'Which of the following citizenship categories describe the members of your household?'
@@ -104,6 +107,31 @@
         }),
         dom.label({}, 'Battered Spouse or Child of U.S. Citizen or Permanent Legal Resident'),
         dom.br({})
+      );
+    },
+
+    sectionClassName() {
+      if (this.answered()) return 'answered';
+    },
+
+    answered: function () {
+      var data = this.props.userSubmittedData;
+
+      return (
+        data.someButNotAllCitizens ||
+        data.undocumented ||
+        data.legalPermanentResident ||
+        data.refugee ||
+        data.asylee ||
+        data.parolee ||
+        data.traffickingVictim ||
+        data.americanIndianBornInCanada ||
+        data.conditionalEntrant ||
+        data.cubanOrHaitianEntrant ||
+        data.deportationWithheld ||
+        data.military ||
+        data.specialImmigrant ||
+        data.batteredSpouseOrChild
       );
     },
 

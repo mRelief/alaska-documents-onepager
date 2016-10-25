@@ -11,7 +11,10 @@
     },
 
     render: function () {
-      return dom.section({ name: 'identityQuestion' },
+      return dom.section({
+          name: 'identityQuestion',
+          className: this.sectionClassName()
+        },
         dom.p({ className: 'question' }, 'Which identity documents do you have easy access to?'),
         dom.input({
           type: 'checkbox',
@@ -48,6 +51,21 @@
         }),
         dom.label({}, 'None of the Above'),
         dom.br({})
+      );
+    },
+
+    sectionClassName() {
+      if (this.answered()) return 'answered';
+    },
+
+    answered: function () {
+      var data = this.props.userSubmittedData;
+
+      return (
+        data.hasStateId ||
+        data.hasBirthCertificate ||
+        data.hasSocialSecurityCard ||
+        data.noneOfTheAboveIdentity
       );
     },
 
