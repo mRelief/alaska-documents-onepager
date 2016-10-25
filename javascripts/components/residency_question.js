@@ -21,6 +21,7 @@
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
+          checked: this.props.userSubmittedData.renting,
           data: 'renting',
           id: 'renting'
         }),
@@ -30,6 +31,7 @@
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
+          checked: this.props.userSubmittedData.ownsHome,
           data: 'ownsHome',
           id: 'ownsHome'
         }),
@@ -39,6 +41,7 @@
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
+          checked: this.props.userSubmittedData.stayingInShelter,
           data: 'stayingInShelter',
           id: 'stayingInShelter'
         }),
@@ -48,6 +51,7 @@
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
+          checked: this.props.userSubmittedData.stayingWithFamilyOrFriends,
           data: 'stayingWithFamilyOrFriends',
           id: 'stayingWithFamilyOrFriends'
         }),
