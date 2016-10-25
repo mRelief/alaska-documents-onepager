@@ -21,71 +21,79 @@
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'employed',
-          checked: this.props.userSubmittedData.employed
+          checked: this.props.userSubmittedData.employed,
+          id: 'employed'
          }),
-        dom.label({}, 'Employment (in the past 60 days)'),
+        dom.label({ htmlFor: 'employed' }, 'Employment (in the past 60 days)'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'unemploymentBenefits',
+          id: 'unemploymentBenefits',
           checked: this.props.userSubmittedData.unemploymentBenefits
         }),
-        dom.label({}, 'Unemployment Benefits'),
+        dom.label({ htmlFor: 'unemploymentBenefits' }, 'Unemployment Benefits'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'retirementBenefits',
+          id: 'retirementBenefits',
           checked: this.props.userSubmittedData.retirementBenefits
         }),
-        dom.label({}, 'Retirement (SSI)'),
+        dom.label({ htmlFor: 'retirementBenefits' }, 'Retirement (SSI)'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'selfEmployed',
+          id: 'selfEmployed',
           checked: this.props.userSubmittedData.selfEmployed
         }),
-        dom.label({}, 'Self-Employment'),
+        dom.label({ htmlFor: 'selfEmployed' }, 'Self-Employment'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'disabilityBenefits',
+          id: 'disabilityBenefits',
           checked: this.props.userSubmittedData.disabilityBenefits
         }),
-        dom.label({}, 'Disability Benefits'),
+        dom.label({ htmlFor: 'disabilityBenefits' }, 'Disability Benefits'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'childSupport',
+          id: 'childSupport',
           checked: this.props.userSubmittedData.childSupport
         }),
-        dom.label({}, 'Child Support'),
+        dom.label({ htmlFor: 'childSupport' }, 'Child Support'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickIncomeCheckbox,
           data: 'rentalIncome',
+          id: 'rentalIncome',
           checked: this.props.userSubmittedData.rentalIncome
         }),
-        dom.label({}, 'Rental Income'),
+        dom.label({ htmlFor: 'rentalIncome' }, 'Rental Income'),
         dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'incomeQuestion',
           onClick: this.props.onClickNoIncome,
           checked: this.props.userSubmittedData.noneOfTheAboveIncome,
+          id: 'noneOfTheAboveIncome',
         }),
-        dom.label({}, 'None of the Above'),
+        dom.label({ htmlFor: 'noneOfTheAboveIncome' }, 'None of the Above'),
         dom.br({})
       );
     },
