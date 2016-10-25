@@ -21,33 +21,37 @@
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
-          data: 'renting'
+          data: 'renting',
+          id: 'renting'
         }),
-        dom.label({}, 'Renting'),
+        dom.label({ htmlFor: 'renting' }, 'Renting'),
         dom.br({}),
         dom.input({
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
-          data: 'ownsHome'
+          data: 'ownsHome',
+          id: 'ownsHome'
         }),
-        dom.label({}, 'Own Home'),
+        dom.label({ htmlFor: 'ownsHome' }, 'Own Home'),
         dom.br({}),
         dom.input({
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
-          data: 'stayingInShelter'
+          data: 'stayingInShelter',
+          id: 'stayingInShelter'
         }),
-        dom.label({}, 'Staying in Shelter'),
+        dom.label({ htmlFor: 'stayingInShelter' }, 'Staying in Shelter'),
         dom.br({}),
         dom.input({
           type: 'radio',
           name: 'residencyQuestion',
           onClick: this.props.onClickLivingSituation,
-          data: 'stayingWithFamilyOrFriends'
+          data: 'stayingWithFamilyOrFriends',
+          id: 'stayingWithFamilyOrFriends'
         }),
-        dom.label({}, 'Staying With Family or Friends'),
+        dom.label({ htmlFor: 'stayingWithFamilyOrFriends' }, 'Staying With Family or Friends'),
         dom.br({})
       );
     },
