@@ -20,11 +20,48 @@
           dom.span({},
             'Which of the following citizenship categories describe the members of your household?'
           ),
-          dom.br({}),
-          dom.br({}),
-          dom.span({}, '(You can select more than one.)'),
           dom.br({})
         ),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'legalPermanentResident'
+        }),
+        dom.label({}, 'Legal Permanent Resident'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'undocumented'
+        }),
+        dom.label({}, 'Undocumented'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'isCitizen'
+        }),
+        dom.label({}, 'U.S. Citizen'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'refugee'
+        }),
+        dom.label({}, 'Refugee'),
+        dom.br({}),
+        dom.input({
+          type: 'checkbox',
+          name: 'additionalCitizenshipQuestion',
+          onClick: this.props.onClickCheckbox,
+          data: 'asylee'
+        }),
+        dom.label({}, 'Asylee'),
+        dom.br({}),
         dom.input({
           type: 'checkbox',
           name: 'additionalCitizenshipQuestion',
