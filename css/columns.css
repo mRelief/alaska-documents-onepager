@@ -9,17 +9,16 @@
   margin-bottom: 20px;
   margin-right: 20px;
   border-radius: 5px;
+  padding: 4px;
 }
 
 .column#questions-column {
-  padding: 20px;
   background-color: #6EC4DF;
   width: 40%;
   margin-left: 20px;
 }
 
 .column#results-column {
-  padding: 30px;
   background-color: white;
   width: 40%;
 }
