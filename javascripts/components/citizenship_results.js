@@ -115,7 +115,7 @@
           list: [
             'Letter of certification from the Office of Refugee Resettlement (ORR)  The caseworker must verify the validity of this letter and notify ORR  of the benefits for which the individual has applied by calling the toll-free trafficking verification line at 1-866-401-5510',
             'Form I-797a indicating Class T-1 Visa',
-            'Form I-797a indicating T-2 (spouse), T-3 (child), T-4 (parent) or T-5 (unmarried sibling under age18 years on the date such non-citizen’s T visa application was filed), known as a Derivative Visa',
+            'Form I-797a indicating T-2 (spouse), T-3 (child), T-4 (parent) or T-5 (unmarried sibling under age 18 years on the date such non-citizen\'s T visa application was filed), known as a Derivative Visa',
           ]
         },
         americanIndianBornInCanada: {
